@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hanuman Chalisa — Illustrated Book for Children</title>
+<meta name="description" content="Learn Hanuman Chalisa with beautiful illustrations, word-by-word meanings in English, Hindi and Telugu. Free for all children."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Yatra+One&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --saffron:#E8550A;--saffron-h:#c44608;
+  --saffron-light:#FFF4EE;--saffron-mid:#FFA050;
+  --gold:#D97706;--gold-light:#FEF3C7;--gold-mid:#FBBF24;
+  --teal:#0D9488;--teal-light:#E0F7F4;
+  --cream:#FFFBF2;--cream2:#FFF8EE;
+  --text:#2C1810;--text2:#6B3A1F;--text3:#92591A;
+  --border:#FFD180;--card:#FFFFFF;
+  --radius:20px;
+  --font-body:'Baloo 2',sans-serif;
+  --font-deva:'Noto Sans Devanagari',sans-serif;
+  --font-tel:'Noto Sans Telugu',sans-serif;
+  --font-disp:'Yatra One',cursive;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--cream);color:var(--text);min-height:100vh;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--saffron);display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;box-shadow:0 2px 16px rgba(180,50,0,.25)}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-title{color:#fff;font-size:20px;font-weight:800;line-height:1.2;font-family:var(--font-disp);letter-spacing:.5px}
+.nav-sub{color:#FFD8B0;font-size:10px;font-weight:600;letter-spacing:1.5px}
+.lang-switcher{display:flex;background:rgba(255,255,255,.15);border-radius:30px;padding:3px;gap:2px}
+.lang-btn{padding:5px 11px;border-radius:24px;border:none;background:transparent;color:rgba(255,255,255,.8);font-family:var(--font-body);font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
+.lang-btn.active{background:#fff;color:var(--saffron)}
+.lang-btn:hover:not(.active){background:rgba(255,255,255,.25);color:#fff}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#FFF8EE,#FFECD0,#FFE0B0);border-bottom:3px solid var(--border);padding:40px 20px 32px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,160,80,.15),transparent 70%)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold-light);border:1.5px solid var(--border);border-radius:30px;padding:5px 14px;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:16px}
+.hero-title{font-family:var(--font-disp);font-size:clamp(30px,6vw,50px);color:var(--saffron);line-height:1.1;margin-bottom:10px;text-shadow:2px 3px 0 rgba(200,80,0,.1)}
+.hero-subtitle{font-size:clamp(13px,2.5vw,16px);color:var(--text2);max-width:500px;margin:0 auto 24px;line-height:1.6;font-weight:600}
+.hero-stats{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.stat-num{font-size:26px;font-weight:800;color:var(--saffron);display:block}
+.stat-lbl{font-size:10px;color:var(--text3);font-weight:700;letter-spacing:.5px}
+
+/* READER */
+.reader{max-width:780px;margin:0 auto;padding:20px 14px 48px}
+
+/* Verse nav */
+.verse-nav-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:10px}
+.arrow-btn{width:42px;height:42px;border-radius:50%;border:2.5px solid var(--border);background:var(--card);color:var(--saffron);font-size:20px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;flex-shrink:0;font-family:var(--font-body);box-shadow:0 2px 8px rgba(180,80,0,.08)}
+.arrow-btn:hover:not(:disabled){background:var(--saffron);color:#fff;border-color:var(--saffron);transform:scale(1.08)}
+.arrow-btn:disabled{border-color:#ddd;color:#ccc;cursor:default;box-shadow:none}
+.pip-area{display:flex;flex-direction:column;align-items:center;gap:6px}
+.pip-row{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:480px}
+.pip{min-width:28px;height:28px;border-radius:8px;background:#FFF4EE;border:2px solid var(--border);cursor:pointer;transition:all .18s;padding:0 5px;font-family:var(--font-body);font-size:11px;font-weight:800;color:var(--text3);}
+.pip:hover{border-color:var(--saffron-mid);color:var(--saffron);background:#FFF0E6}
+.pip.active{background:var(--saffron);border-color:var(--saffron);color:#fff;transform:scale(1.12);box-shadow:0 2px 8px rgba(232,85,10,.35)}
+.verse-counter{font-size:12px;font-weight:700;color:var(--text3);letter-spacing:.5px}
+
+/* Page card */
+.page-card{background:var(--card);border-radius:var(--radius);border:2.5px solid var(--border);box-shadow:0 4px 24px rgba(180,80,20,.10);overflow:hidden;animation:fadeSlide .35s ease}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* Illustration */
+.illus-zone{width:100%;background:linear-gradient(180deg,#FEF9E7,#FFF0C0);border-bottom:3px solid var(--border);min-height:260px;display:flex;align-items:center;justify-content:center;padding:8px 4px;position:relative;overflow:hidden}
+.illus-zone svg{max-width:100%;filter:drop-shadow(1px 4px 6px rgba(0,0,0,.10))}
+.verse-label-pill{position:absolute;top:12px;left:12px;background:var(--saffron);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;padding:4px 12px;border-radius:20px}
+
+/* AUDIO PLAYER */
+.audio-bar{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#FFF4EE,#FEF9EC);border-bottom:2px solid var(--border);padding:10px 18px}
+.play-btn{width:40px;height:40px;border-radius:50%;border:none;background:var(--saffron);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;flex-shrink:0}
+.play-btn:hover{background:var(--saffron-h);transform:scale(1.08)}
+.audio-info{flex:1;min-width:0}
+.audio-title{font-size:12px;font-weight:700;color:var(--text2);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.audio-progress-wrap{height:5px;background:#FFD180;border-radius:3px;cursor:pointer;position:relative}
+.audio-progress{height:100%;background:var(--saffron);border-radius:3px;transition:width .3s linear;width:0%}
+.audio-time{font-size:11px;color:var(--text3);font-weight:600;flex-shrink:0}
+.audio-speed{padding:4px 8px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--text2);font-family:var(--font-body);font-size:11px;font-weight:700;cursor:pointer}
+.audio-lang-row{display:flex;align-items:center;gap:6px;padding:4px 18px 10px;background:#FFF4EE;border-bottom:1.5px solid var(--border)}
+.audio-lang-lbl{font-size:11px;font-weight:700;color:var(--text3)}
+.alang-btn{padding:3px 10px;border-radius:14px;border:1.5px solid var(--border);background:transparent;color:var(--text2);font-family:var(--font-body);font-size:11px;font-weight:700;cursor:pointer;transition:all .15s}
+.alang-btn.active{background:var(--saffron);border-color:var(--saffron);color:#fff}
+
+/* Content */
+.content-zone{padding:20px 22px 16px}
+.script-hindi{font-family:var(--font-deva);font-size:clamp(19px,3.5vw,25px);font-weight:700;color:var(--saffron);text-align:center;line-height:1.6;margin-bottom:4px}
+.script-telugu{font-family:var(--font-tel);font-size:clamp(17px,3vw,22px);font-weight:600;color:var(--saffron);text-align:center;line-height:1.7;margin-bottom:4px}
+.script-roman{font-size:14px;font-weight:700;color:var(--text2);text-align:center;font-style:italic;letter-spacing:.3px;margin-bottom:18px}
+.section-lbl{font-size:10px;font-weight:800;color:var(--text3);letter-spacing:2px;margin-bottom:8px;display:block}
+
+/* Word cards — previous style */
+.word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:8px;margin-bottom:16px}
+.wcard{background:var(--saffron-light);border:1.5px solid #FFB87A;border-radius:14px;padding:9px 10px;text-align:center;transition:transform .15s,box-shadow .15s;cursor:default}
+.wcard:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(180,80,0,.12)}
+.wcard-src{font-size:16px;font-weight:700;color:var(--saffron);display:block;margin-bottom:2px;line-height:1.4}
+.wcard-src.deva{font-family:var(--font-deva)}
+.wcard-src.tel{font-family:var(--font-tel);font-size:14px}
+.wcard-rom{font-size:11px;font-style:italic;color:var(--text3);display:block;margin-bottom:3px}
+.wcard-eng{font-size:11px;font-weight:700;color:var(--text);display:block}
+
+.meaning-box{background:var(--gold-light);border-left:4px solid var(--gold);border-radius:0 14px 14px 0;padding:13px 16px;font-size:14px;line-height:1.75;color:var(--text);font-weight:600;margin-bottom:13px}
+.moral-row{display:flex;gap:12px;align-items:flex-start;background:linear-gradient(90deg,#FEF9EC,#FFFBF2);border:1.5px solid var(--border);border-radius:14px;padding:12px 14px}
+.moral-star{width:30px;height:30px;border-radius:9px;background:var(--saffron);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:800}
+.moral-text{font-size:13px;font-weight:700;color:#7C4A00;line-height:1.55}
+
+.page-footer-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 22px;background:var(--cream2);border-top:1.5px solid var(--border);font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px}
+
+/* Features */
+.features-wrap{background:var(--saffron);padding:32px 20px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;max-width:900px;margin:0 auto}
+.feat-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:16px 18px;color:#fff}
+.feat-icon{font-size:26px;margin-bottom:8px;display:block}
+.feat-title{font-size:14px;font-weight:800;margin-bottom:4px}
+.feat-desc{font-size:12px;opacity:.85;line-height:1.5}
+footer{background:#2C1810;color:rgba(255,255,255,.7);text-align:center;padding:24px 20px;font-size:13px;line-height:1.8}
+footer strong{color:#FFD180}
+
+@media(max-width:580px){
+  .nav-title{font-size:14px}.lang-btn{padding:4px 8px;font-size:11px}
+  .content-zone{padding:14px 12px}.word-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
+  .audio-bar{padding:10px 12px}.audio-lang-row{padding:4px 12px 8px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div>
+      <div class="nav-title" id="navTitle">Hanuman Chalisa</div>
+      <div class="nav-sub">ILLUSTRATED · WORD BY WORD · FREE</div>
+    </div>
+  </div>
+  <div class="lang-switcher">
+    <button class="lang-btn" data-lang="hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" data-lang="te" onclick="setLang('te')">తెలుగు</button>
+    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">English</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">🙏 FREE FOR ALL CHILDREN — NO ADS 🙏</div>
+  <h1 class="hero-title" id="heroTitle">Hanuman Chalisa</h1>
+  <p class="hero-subtitle" id="heroSub">Beautiful illustrations, word-by-word meanings and audio — in Hindi, Telugu and English</p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">42</span><span class="stat-lbl">VERSES</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-lbl">LANGUAGES</span></div>
+    <div class="stat"><span class="stat-num">🔊</span><span class="stat-lbl">AUDIO</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-lbl">FREE</span></div>
+  </div>
+</section>
+
+<main class="reader">
+  <div class="verse-nav-bar">
+    <button class="arrow-btn" id="prevBtn" onclick="go(-1)">&#8592;</button>
+    <div class="pip-area">
+      <div class="pip-row" id="pipRow"></div>
+      <span class="verse-counter" id="verseCounter">Verse 1 of 42</span>
+    </div>
+    <button class="arrow-btn" id="nextBtn" onclick="go(1)">&#8594;</button>
+  </div>
+
+  <div class="page-card" id="pageCard">
+    <div class="illus-zone" id="illusZone"><div class="verse-label-pill" id="versePill"></div></div>
+
+    <!-- AUDIO -->
+    <div class="audio-bar">
+      <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+      <div class="audio-info">
+        <div class="audio-title" id="audioTitle">Loading audio...</div>
+        <div class="audio-progress-wrap" id="progressWrap" onclick="seekAudio(event)">
+          <div class="audio-progress" id="audioProgress"></div>
+        </div>
+      </div>
+      <span class="audio-time" id="audioTime">0:00</span>
+      <select class="audio-speed" id="speedSel" onchange="changeSpeed()">
+        <option value="0.6">0.6×</option>
+        <option value="0.8">0.8×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.2">1.2×</option>
+      </select>
+    </div>
+    <div class="audio-lang-row">
+      <span class="audio-lang-lbl" id="audioLangLbl">Read in:</span>
+      <button class="alang-btn" data-al="hi" onclick="setAudioLang('hi')">हिंदी</button>
+      <button class="alang-btn" data-al="te" onclick="setAudioLang('te')">తెలుగు</button>
+      <button class="alang-btn active" data-al="en" onclick="setAudioLang('en')">English</button>
+    </div>
+
+    <div class="content-zone" id="contentZone"></div>
+    <div class="page-footer-bar" id="footerBar"></div>
+  </div>
+</main>
+
+<div class="features-wrap">
+  <div class="features">
+    <div class="feat-card"><span class="feat-icon">🎨</span><div class="feat-title">Bright Illustrations</div><div class="feat-desc">Every verse has a unique cartoon scene</div></div>
+    <div class="feat-card"><span class="feat-icon">🔊</span><div class="feat-title">Audio Pronunciation</div><div class="feat-desc">Hear every verse in Hindi, Telugu & English</div></div>
+    <div class="feat-card"><span class="feat-icon">🔤</span><div class="feat-title">Word by Word</div><div class="feat-desc">Every Sanskrit word explained fully</div></div>
+    <div class="feat-card"><span class="feat-icon">🌐</span><div class="feat-title">3 Languages</div><div class="feat-desc">Hindi, Telugu and English — switch anytime</div></div>
+  </div>
+</div>
+
+<footer>
+  <p><strong>🙏 Hanuman Chalisa — Illustrated Children's Book</strong></p>
+  <p>Made with devotion · हिंदी · తెలుగు · English · Free for all children</p>
+  <p style="margin-top:6px;font-size:11px;opacity:.5">Share freely · जय हनुमान · జయ హనుమాన్</p>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// COMPLETE 42-VERSE DATA (Doha 1, 2 + 40 Chaupai + Doha end)
+// ═══════════════════════════════════════════════════════════
+const V=[
+{id:1,type:"Doha",label:{hi:"दोहा १",te:"దోహా ౧",en:"Doha 1"},
+ san:"श्री गुरु चरण सरोज रज, निज मन मुकुरु सुधारि। बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि॥",
+ rom:"Shri Guru Charan Saroj Raj, Nij Man Mukuru Sudhaari. Barnau Raghubar Bimal Jasu, Jo Daayaku Phal Chari.",
+ tel:"శ్రీ గురు చరణ సరోజ రజ, నిజ మన ముకురు సుధారి। బర్నఉఁ రఘుబర్ బిమల్ జసు, జో దాయకు ఫల చారి॥",
+ words:[
+   {s:"श्री गुरु",r:"Shri Guru",en:"respected teacher",hi:"श्रद्धेय गुरु",te:"పూజ్య గురువు"},
+   {s:"चरण सरोज",r:"Charan Saroj",en:"lotus feet",hi:"कमल-चरण",te:"పాద కమలాలు"},
+   {s:"रज",r:"Raj",en:"sacred dust",hi:"पवित्र धूल",te:"పవిత్ర ధూళి"},
+   {s:"मन मुकुरु",r:"Man Mukuru",en:"mirror of mind",hi:"मन का दर्पण",te:"మనసు అద్దం"},
+   {s:"सुधारि",r:"Sudhaari",en:"purify / clean",hi:"शुद्ध करना",te:"శుభ్రపరచు"},
+   {s:"बरनउँ",r:"Barnau",en:"I describe / sing",hi:"मैं वर्णन करता हूँ",te:"నేను వర్ణిస్తున్నాను"},
+   {s:"रघुबर",r:"Raghubar",en:"best of Raghu clan (Ram)",hi:"रघुकुल श्रेष्ठ राम",te:"రఘు వంశ శ్రేష్ఠుడు (రాముడు)"},
+   {s:"बिमल जसु",r:"Bimal Jasu",en:"pure glory / fame",hi:"निर्मल यश",te:"నిర్మల కీర్తి"},
+   {s:"फल चारि",r:"Phal Chari",en:"four fruits of life",hi:"चारों फल (धर्म,अर्थ,काम,मोक्ष)",te:"నాలుగు పురుషార్థాలు"},
+ ],
+ meaning:{hi:"गुरु के कमल-चरणों की धूल से मन के दर्पण को साफ करके, मैं रघुपति राम की निर्मल कीर्ति का वर्णन करता हूँ जो जीवन के चारों फलों को देने वाली है।",te:"గురువు పాద కమల ధూళితో మనసు అద్దాన్ని శుభ్రపరచి, నాలుగు పురుషార్థాలిచ్చే రాముని నిర్మల కీర్తిని వర్ణిస్తున్నాను.",en:"Cleaning the mirror of my mind with the dust of the Guru's lotus feet, I sing the pure glory of Ram, which grants all four goals of life."},
+ moral:{hi:"विनम्रता से शुरुआत करने वाला हमेशा सफल होता है।",te:"వినయంగా మొదలుపెట్టేవాడు ఎల్లప్పుడూ విజయం పొందుతాడు.",en:"One who begins with humility always succeeds."},
+ scene:"guru"},
+
+{id:2,type:"Doha",label:{hi:"दोहा २",te:"దోహా ౨",en:"Doha 2"},
+ san:"बुद्धिहीन तनु जानिके, सुमिरौं पवन कुमार। बल बुद्धि बिद्या देहु मोहिं, हरहु कलेस बिकार॥",
+ rom:"Buddhiheen Tanu Janike, Sumirau Pavan Kumar. Bal Buddhi Bidya Dehu Mohin, Harahu Kales Bikaar.",
+ tel:"బుద్ధిహీన తను జానికే, సుమిరౌం పవన కుమార। బల బుద్ధి బిద్యా దేహు మోహిం, హరహు కలేస బికార॥",
+ words:[
+   {s:"बुद्धिहीन",r:"Buddhiheen",en:"without wisdom",hi:"बुद्धिहीन",te:"జ్ఞానం లేనివాడు"},
+   {s:"तनु",r:"Tanu",en:"body/self",hi:"शरीर",te:"శరీరం"},
+   {s:"सुमिरौं",r:"Sumirau",en:"I remember/pray",hi:"मैं स्मरण करता हूँ",te:"స్మరిస్తాను"},
+   {s:"पवन कुमार",r:"Pavan Kumar",en:"son of wind god",hi:"पवन देव के पुत्र",te:"వాయు దేవుని పుత్రుడు"},
+   {s:"बल",r:"Bal",en:"strength",hi:"शक्ति / बल",te:"బలం"},
+   {s:"बुद्धि",r:"Buddhi",en:"intelligence",hi:"बुद्धि",te:"బుద్ధి"},
+   {s:"बिद्या",r:"Bidya",en:"knowledge",hi:"विद्या / ज्ञान",te:"విద్య / జ్ఞానం"},
+   {s:"हरहु कलेस",r:"Harahu Kales",en:"remove sorrows",hi:"दुखों को दूर करो",te:"దుఃఖాలను తొలగించు"},
+ ],
+ meaning:{hi:"खुद को बुद्धिहीन जानकर मैं पवन पुत्र हनुमान को याद करता हूँ। हे हनुमान! मुझे बल, बुद्धि और विद्या दो और मेरे सभी कष्टों को दूर करो।",te:"నన్ను నేను జ్ఞానం లేనివాడిగా తెలుసుకుని పవన పుత్రుడైన హనుమాన్‌ను స్మరిస్తున్నాను. బలం, బుద్ధి, విద్య ప్రసాదించి నా కష్టాలు తొలగించు.",en:"Knowing myself to be foolish, I remember Hanuman, son of the Wind. O Hanuman! Grant me strength, wisdom and knowledge, and remove all my sorrows."},
+ moral:{hi:"मदद माँगना कमज़ोरी नहीं, बल्कि समझदारी है।",te:"సహాయం అడగడం బలహీనత కాదు, తెలివి.",en:"Asking for help is wisdom, not weakness."},
+ scene:"prayer"},
+
+{id:3,type:"Chaupai",label:{hi:"चौपाई १",te:"చౌపాయి ౧",en:"Chaupai 1"},
+ san:"जय हनुमान ज्ञान गुण सागर। जय कपीस तिहुँ लोक उजागर॥",
+ rom:"Jai Hanuman Gyan Gun Saagar. Jai Kapis Tihun Lok Ujaagar.",
+ tel:"జయ హనుమాన్ జ్ఞాన గుణ సాగర। జయ కపీస తిహుం లోక ఉజాగర॥",
+ words:[
+   {s:"जय",r:"Jai",en:"victory/glory",hi:"जय / विजय",te:"జయం"},
+   {s:"ज्ञान",r:"Gyan",en:"knowledge/wisdom",hi:"ज्ञान",te:"జ్ఞానం"},
+   {s:"गुण सागर",r:"Gun Saagar",en:"ocean of virtues",hi:"गुणों का सागर",te:"సద్గుణాల సముద్రం"},
+   {s:"कपीस",r:"Kapis",en:"king of monkeys",hi:"वानरराज",te:"వానర రాజు"},
+   {s:"तिहुँ लोक",r:"Tihun Lok",en:"three worlds",hi:"तीनों लोक",te:"ముల్లోకాలు"},
+   {s:"उजागर",r:"Ujaagar",en:"illuminator",hi:"प्रकाशित करने वाला",te:"వెలిగించేవాడు"},
+ ],
+ meaning:{hi:"हनुमान जी की जय हो — वे ज्ञान और गुणों के सागर हैं। वानरराज की जय हो जो तीनों लोकों को प्रकाशित करते हैं।",te:"జ్ఞాన గుణ సాగరుడైన హనుమాన్‌కి జయం. ముల్లోకాలను వెలిగించే వానర రాజుకి జయం.",en:"Glory to Hanuman, ocean of wisdom and virtues. Glory to the king of monkeys who illuminates all three worlds."},
+ moral:{hi:"ज्ञान का कोई अंत नहीं। जितना सीखोगे, उतना बढ़ोगे।",te:"జ్ఞానానికి హద్దు లేదు. ఎంత నేర్చుకుంటే అంత పెరుగుతావు.",en:"Knowledge has no limit. The more you learn, the more you grow."},
+ scene:"ocean"},
+
+{id:4,type:"Chaupai",label:{hi:"चौपाई २",te:"చౌపాయి ౨",en:"Chaupai 2"},
+ san:"राम दूत अतुलित बल धामा। अंजनि पुत्र पवनसुत नामा॥",
+ rom:"Ram Doot Atolit Bal Dhama. Anjani Putra Pavansut Naama.",
+ tel:"రామ దూత అతులిత బల ధామా। అంజని పుత్ర పవనసుత నామా॥",
+ words:[
+   {s:"राम दूत",r:"Ram Doot",en:"messenger of Ram",hi:"राम के दूत",te:"రాముని దూత"},
+   {s:"अतुलित",r:"Atolit",en:"matchless/incomparable",hi:"बेजोड़",te:"సాటిలేని"},
+   {s:"बल धामा",r:"Bal Dhama",en:"abode of strength",hi:"बल के घर",te:"శక్తి నిలయం"},
+   {s:"अंजनि पुत्र",r:"Anjani Putra",en:"son of Anjani",hi:"अंजनी माता के पुत्र",te:"అంజని పుత్రుడు"},
+   {s:"पवनसुत",r:"Pavansut",en:"son of wind god",hi:"वायु पुत्र",te:"పవన పుత్రుడు"},
+ ],
+ meaning:{hi:"हनुमान जी राम के दूत हैं और अतुलनीय शक्ति के भंडार हैं। वे माँ अंजनी के पुत्र और वायुदेव के पुत्र पवनसुत के नाम से प्रसिद्ध हैं।",te:"హనుమాన్ రాముని దూత మరియు సాటిలేని శక్తి యొక్క నిలయం. అంజని పుత్రుడు మరియు పవన పుత్రుడు అని ప్రసిద్ధుడు.",en:"Hanuman is the messenger of Ram, the abode of matchless strength. He is the son of Anjani and Pavansut, the son of the Wind God."},
+ moral:{hi:"परिवार हमें जड़ें देता है, हमारे गुण हमें पहचान।",te:"కుటుంబం వేర్లు ఇస్తుంది, మన సద్గుణాలు గుర్తింపు ఇస్తాయి.",en:"Family gives us roots; our virtues give us identity."},
+ scene:"anjani"},
+
+{id:5,type:"Chaupai",label:{hi:"चौपाई ३",te:"చౌపాయి ౩",en:"Chaupai 3"},
+ san:"महावीर विक्रम बजरंगी। कुमति निवार सुमति के संगी॥",
+ rom:"Mahaveer Vikram Bajrangi. Kumati Nivaar Sumati Ke Sangi.",
+ tel:"మహావీర్ విక్రమ్ బజరంగి। కుమతి నివార్ సుమతి కే సంగి॥",
+ words:[
+   {s:"महावीर",r:"Mahaveer",en:"great hero",hi:"महान वीर",te:"మహావీరుడు"},
+   {s:"विक्रम",r:"Vikram",en:"courageous",hi:"साहसी",te:"సాహసవంతుడు"},
+   {s:"बजरंगी",r:"Bajrangi",en:"diamond-bodied",hi:"वज्र जैसा शरीर",te:"వజ్ర శరీరుడు"},
+   {s:"कुमति",r:"Kumati",en:"evil thoughts",hi:"बुरे विचार",te:"చెడు ఆలోచనలు"},
+   {s:"निवार",r:"Nivaar",en:"remover/destroyer",hi:"हटाने वाला",te:"తొలగించేవాడు"},
+   {s:"सुमति",r:"Sumati",en:"good thoughts",hi:"अच्छे विचार",te:"మంచి ఆలోచనలు"},
+   {s:"संगी",r:"Sangi",en:"companion/friend",hi:"साथी",te:"సహచరుడు"},
+ ],
+ meaning:{hi:"महावीर विक्रम और वज्र जैसे शरीर वाले हनुमान जी बुरे विचारों को नष्ट करते हैं और अच्छे विचारों वालों के साथी हैं।",te:"మహావీర్ విక్రమ్ బజరంగి అయిన హనుమాన్ చెడు ఆలోచనలను తొలగించి, మంచి ఆలోచనలవారికి సహచరుడవుతాడు.",en:"Great hero Hanuman with his diamond-like body removes evil thoughts and is the companion of those with good thinking."},
+ moral:{hi:"अच्छे विचार सोचो — हनुमान तुम्हारे साथ हैं!",te:"మంచి ఆలోచనలు ఆలోచించు — హనుమాన్ నీతో ఉంటాడు!",en:"Think good thoughts — Hanuman is always with you!"},
+ scene:"thoughts"},
+
+{id:6,type:"Chaupai",label:{hi:"चौपाई ४",te:"చౌపాయి ౪",en:"Chaupai 4"},
+ san:"कंचन बरन बिराज सुबेसा। कानन कुंडल कुंचित केसा॥",
+ rom:"Kanchan Baran Biraaj Subesa. Kanan Kundal Kunchit Kesa.",
+ tel:"కంచన్ బరన్ బిరాజ్ సుబేసా। కానన్ కుండల్ కుంచిత్ కేసా॥",
+ words:[
+   {s:"कंचन बरन",r:"Kanchan Baran",en:"golden complexion",hi:"सोने जैसा रंग",te:"సోనె రంగు"},
+   {s:"बिराज",r:"Biraaj",en:"shining/glowing",hi:"चमकना",te:"వెలిగిపోవడం"},
+   {s:"सुबेसा",r:"Subesa",en:"beautifully dressed",hi:"सुंदर वस्त्रों में",te:"అందమైన వస్త్రాలు"},
+   {s:"कानन कुंडल",r:"Kanan Kundal",en:"earrings in ears",hi:"कानों में कुंडल",te:"చెవులలో కుండలాలు"},
+   {s:"कुंचित केसा",r:"Kunchit Kesa",en:"curly hair",hi:"घुंघराले बाल",te:"మెలికలు తిరిగిన జుత్తు"},
+ ],
+ meaning:{hi:"हनुमान जी का रंग सोने जैसा है, वे सुंदर वस्त्रों में सुशोभित हैं, उनके कानों में कुंडल और बाल घुंघराले हैं।",te:"హనుమాన్ సొనె రంగులో ఉండి, అందమైన వస్త్రాలు ధరించి, చెవులలో కుండలాలతో, మెలికలు తిరిగిన జుత్తుతో శోభిస్తాడు.",en:"Hanuman shines with a golden complexion, beautifully dressed, with earrings in his ears and curly hair."},
+ moral:{hi:"सुंदरता दिल की होती है, बाहर की नहीं।",te:"అందం హృదయంలో ఉంటుంది, బయట కాదు.",en:"True beauty comes from within, not from outside."},
+ scene:"golden"},
+
+{id:7,type:"Chaupai",label:{hi:"चौपाई ५",te:"చౌపాయి ౫",en:"Chaupai 5"},
+ san:"हाथ बज्र औ ध्वजा बिराजै। काँधे मूँज जनेऊ साजै॥",
+ rom:"Haath Bajra Au Dhvaja Biraaje. Kaandhe Moonj Janeu Saaje.",
+ tel:"హాత్ బజ్ర ఔ ధ్వజా బిరాజై। కాంధే మూంజ జనేఉ సాజై॥",
+ words:[
+   {s:"हाथ",r:"Haath",en:"hands",hi:"हाथ",te:"చేతులు"},
+   {s:"बज्र",r:"Bajra",en:"thunderbolt/mace",hi:"वज्र / गदा",te:"వజ్రం / గద"},
+   {s:"ध्वजा",r:"Dhvaja",en:"flag/banner",hi:"ध्वजा / झंडा",te:"జెండా / ధ్వజం"},
+   {s:"काँधे",r:"Kaandhe",en:"on shoulders",hi:"कंधे पर",te:"భుజాలపై"},
+   {s:"मूँज जनेऊ",r:"Moonj Janeu",en:"sacred thread",hi:"मूँज की जनेऊ",te:"పవిత్ర జంధ్యం"},
+ ],
+ meaning:{hi:"हनुमान जी के हाथों में वज्र और ध्वजा सुशोभित है और उनके कंधे पर मूँज की जनेऊ शोभा देती है।",te:"హనుమాన్ చేతులలో వజ్రం మరియు ధ్వజం ఉంటాయి, భుజాలపై మూంజ జంధ్యం శోభిస్తుంది.",en:"Hanuman holds a thunderbolt and flag in his hands, with a sacred thread of munja grass on his shoulders."},
+ moral:{hi:"अपनी ज़िम्मेदारी हमेशा अपने कंधों पर उठाओ।",te:"నీ బాధ్యతను ఎల్లప్పుడూ నీ భుజాలపై మోయి.",en:"Always carry your responsibilities on your own shoulders."},
+ scene:"hero"},
+
+{id:8,type:"Chaupai",label:{hi:"चौपाई ६",te:"చౌపాయి ౬",en:"Chaupai 6"},
+ san:"शंकर सुवन केसरी नंदन। तेज प्रताप महा जग बंदन॥",
+ rom:"Shankar Suvan Kesari Nandan. Tej Pratap Maha Jag Bandan.",
+ tel:"శంకర సువన్ కేసరీ నందన్। తేజ ప్రతాప్ మహా జగ్ బందన్॥",
+ words:[
+   {s:"शंकर सुवन",r:"Shankar Suvan",en:"son of Shiva",hi:"शिव के अंश",te:"శివుని అంశం"},
+   {s:"केसरी नंदन",r:"Kesari Nandan",en:"son of Kesari",hi:"केसरी के पुत्र",te:"కేసరి పుత్రుడు"},
+   {s:"तेज",r:"Tej",en:"brilliance/radiance",hi:"तेज",te:"తేజస్సు"},
+   {s:"प्रताप",r:"Pratap",en:"glory/power",hi:"प्रताप / महिमा",te:"ప్రతాపం / మహిమ"},
+   {s:"जग बंदन",r:"Jag Bandan",en:"worshipped by world",hi:"जगत द्वारा पूजित",te:"జగత్తు పూజించేవాడు"},
+ ],
+ meaning:{hi:"हनुमान जी शिव के अंश और केसरी के पुत्र हैं। उनके तेज और प्रताप की तीनों लोकों में पूजा होती है।",te:"హనుమాన్ శివుని అంశం మరియు కేసరి పుత్రుడు. ఆయన తేజస్సు మరియు ప్రతాపం ముల్లోకాలలో పూజింపబడతాయి.",en:"Hanuman is an aspect of Shiva and the son of Kesari. His brilliance and glory are worshipped in all three worlds."},
+ moral:{hi:"महान लोग हमेशा याद किए जाते हैं। अच्छे काम करो, दुनिया तुम्हें याद करेगी।",te:"గొప్పవారిని ఎల్లప్పుడూ గుర్తుంచుకుంటారు. మంచి చేయి, లోకం నిన్ను గుర్తిస్తుంది.",en:"Great people are always remembered. Do good, and the world will remember you."},
+ scene:"threeworlds"},
+
+{id:9,type:"Chaupai",label:{hi:"चौपाई ७",te:"చౌపాయి ౭",en:"Chaupai 7"},
+ san:"विद्यावान गुणी अति चातुर। राम काज करिबे को आतुर॥",
+ rom:"Vidyavaan Guni Ati Chatur. Ram Kaaj Karibe Ko Aatur.",
+ tel:"విద్యావాన్ గుణి అతి చాతుర్। రామ్ కాజ్ కరిబే కో ఆతుర్॥",
+ words:[
+   {s:"विद्यावान",r:"Vidyavaan",en:"learned/educated",hi:"विद्वान",te:"విద్యావంతుడు"},
+   {s:"गुणी",r:"Guni",en:"virtuous",hi:"गुणवान",te:"సద్గుణవంతుడు"},
+   {s:"अति चातुर",r:"Ati Chatur",en:"very clever/wise",hi:"अत्यंत चतुर",te:"అత్యంత తెలివైనవాడు"},
+   {s:"राम काज",r:"Ram Kaaj",en:"Ram's work/mission",hi:"राम का काम",te:"రాముని పని"},
+   {s:"आतुर",r:"Aatur",en:"eager/ready",hi:"उत्सुक / तत्पर",te:"ఆసక్తిగా సిద్ధంగా"},
+ ],
+ meaning:{hi:"हनुमान जी विद्वान, गुणवान और अत्यंत चतुर हैं, और वे हमेशा राम के काम को करने के लिए तत्पर रहते हैं।",te:"హనుమాన్ విద్యావంతుడు, సద్గుణవంతుడు మరియు అత్యంత తెలివైనవాడు. ఆయన ఎల్లప్పుడూ రాముని పని చేయడానికి సిద్ధంగా ఉంటాడు.",en:"Hanuman is learned, virtuous and very clever, always eager and ready to do the work of Ram."},
+ moral:{hi:"विद्या और गुण मिलकर काम को सफल बनाते हैं।",te:"విద్య మరియు సద్గుణాలు కలిసి పనిని విజయవంతం చేస్తాయి.",en:"Knowledge and virtue together make every task successful."},
+ scene:"messenger"},
+
+{id:10,type:"Chaupai",label:{hi:"चौपाई ८",te:"చౌపాయి ౮",en:"Chaupai 8"},
+ san:"प्रभु चरित्र सुनिबे को रसिया। राम लखन सीता मन बसिया॥",
+ rom:"Prabhu Charitra Sunibe Ko Rasiya. Ram Lakhan Seeta Man Basiya.",
+ tel:"ప్రభు చరిత్ర సునిబే కో రసియా। రామ్ లఖన్ సీతా మన్ బసియా॥",
+ words:[
+   {s:"प्रभु चरित्र",r:"Prabhu Charitra",en:"Lord's story",hi:"प्रभु की कथा",te:"ప్రభువు కథ"},
+   {s:"सुनिबे को",r:"Sunibe Ko",en:"to hear/listen",hi:"सुनने के लिए",te:"వినడానికి"},
+   {s:"रसिया",r:"Rasiya",en:"lover of/devoted to",hi:"रसिक / प्रेमी",te:"ప్రేమికుడు / భక్తుడు"},
+   {s:"मन बसिया",r:"Man Basiya",en:"lives in the heart",hi:"मन में बसे हैं",te:"మనసులో నివసిస్తారు"},
+ ],
+ meaning:{hi:"हनुमान जी भगवान की कथा सुनने के बड़े रसिक हैं। राम, लक्ष्मण और सीता उनके मन में बसे हुए हैं।",te:"హనుమాన్ ప్రభువు కథ వినడానికి ఎంతో ఆసక్తి చూపిస్తాడు. రాముడు, లక్ష్మణుడు మరియు సీత ఆయన మనసులో నివసిస్తారు.",en:"Hanuman loves to hear the stories of the Lord. Ram, Lakshman and Sita live in his heart always."},
+ moral:{hi:"जो हम सुनते हैं, वो हम बन जाते हैं। अच्छी कहानियाँ सुनो।",te:"మనం వినేదే మనమవుతాం. మంచి కథలు వినండి.",en:"We become what we listen to. Listen to good stories."},
+ scene:"threeworlds"},
+
+{id:11,type:"Chaupai",label:{hi:"चौपाई ९",te:"చౌపాయి ౯",en:"Chaupai 9"},
+ san:"सूक्ष्म रूप धरि सियहिं दिखावा। बिकट रूप धरि लंक जरावा॥",
+ rom:"Sookshma Roop Dhari Siyahi Dikhaava. Bikat Roop Dhari Lanka Jaraava.",
+ tel:"సూక్ష్మ రూప్ ధరి సియహిం దిఖావా। బికట్ రూప్ ధరి లంక జరావా॥",
+ words:[
+   {s:"सूक्ष्म रूप",r:"Sookshma Roop",en:"tiny form",hi:"छोटा रूप",te:"సూక్ష్మ రూపం"},
+   {s:"सियहिं दिखावा",r:"Siyahi Dikhaava",en:"showed Sita",hi:"सीता को दिखाया",te:"సీతకు చూపించాడు"},
+   {s:"बिकट रूप",r:"Bikat Roop",en:"fierce/huge form",hi:"विकराल रूप",te:"భయంకర రూపం"},
+   {s:"लंक जरावा",r:"Lanka Jaraava",en:"burned Lanka",hi:"लंका को जलाया",te:"లంకను తగలబెట్టాడు"},
+ ],
+ meaning:{hi:"हनुमान जी ने छोटा रूप धारण करके सीता जी को दर्शन दिए और विकराल रूप धारण करके लंका को जला दिया।",te:"హనుమాన్ సూక్ష్మ రూపంలో సీతకు దర్శనమిచ్చాడు మరియు భయంకర రూపంలో లంకను తగలబెట్టాడు.",en:"Taking a tiny form, Hanuman showed himself to Sita; then taking a fierce form, he burned Lanka."},
+ moral:{hi:"सही समय पर सही रूप में काम करना ही बुद्धिमानी है।",te:"సరైన సమయంలో సరైన విధంగా పని చేయడమే తెలివి.",en:"Wisdom is doing the right thing in the right form at the right time."},
+ scene:"lanka"},
+
+{id:12,type:"Chaupai",label:{hi:"चौपाई १०",te:"చౌపాయి ౧౦",en:"Chaupai 10"},
+ san:"भीम रूप धरि असुर संहारे। रामचंद्र के काज सँवारे॥",
+ rom:"Bheem Roop Dhari Asur Sanhaare. Ramchandra Ke Kaaj Sanvaare.",
+ tel:"భీమ రూప్ ధరి అసుర్ సంహారే। రామచంద్ర కే కాజ్ సంవారే॥",
+ words:[
+   {s:"भीम रूप",r:"Bheem Roop",en:"massive/fearsome form",hi:"विशाल रूप",te:"భీకర రూపం"},
+   {s:"असुर संहारे",r:"Asur Sanhaare",en:"destroyed demons",hi:"राक्षसों का नाश किया",te:"రాక్షసులను నాశనం చేశాడు"},
+   {s:"रामचंद्र",r:"Ramchandra",en:"Lord Ram",hi:"भगवान राम",te:"రామచంద్రుడు"},
+   {s:"काज सँवारे",r:"Kaaj Sanvaare",en:"accomplished tasks",hi:"काम पूरा किया",te:"పనులు పూర్తి చేశాడు"},
+ ],
+ meaning:{hi:"हनुमान जी ने विशाल भीम रूप धारण करके राक्षसों का संहार किया और रामचंद्र जी के सभी कार्य सफलतापूर्वक पूरे किए।",te:"హనుమాన్ భీకర రూపం ధరించి రాక్షసులను సంహరించి రామచంద్రుని పనులు పూర్తి చేశాడు.",en:"Taking a massive form, Hanuman destroyed the demons and successfully completed all the tasks of Lord Ram."},
+ moral:{hi:"जब ज़रूरत हो, पूरी ताकत लगाओ। राम के काम में कोई कमी मत छोड़ो।",te:"అవసరమైనప్పుడు పూర్తి శక్తి వినియోగించు.",en:"When needed, give your full strength. Leave nothing undone."},
+ scene:"hero"},
+
+{id:13,type:"Chaupai",label:{hi:"चौपाई ११",te:"చౌపాయి ౧౧",en:"Chaupai 11"},
+ san:"लाय सजीवन लखन जियाये। श्री रघुबीर हरषि उर लाये॥",
+ rom:"Laay Sajeevan Lakhan Jiyaaye. Shri Raghubeera Harashi Ur Laaye.",
+ tel:"లాయ్ సజీవన్ లఖన్ జియాయే। శ్రీ రఘుబీర్ హరషి ఉర్ లాయే॥",
+ words:[
+   {s:"सजीवन",r:"Sajeevan",en:"sanjivani herb",hi:"संजीवनी बूटी",te:"సంజీవని మూలిక"},
+   {s:"लखन जियाये",r:"Lakhan Jiyaaye",en:"revived Lakshman",hi:"लक्ष्मण को जिलाया",te:"లక్ష్మణుని బ్రతికించాడు"},
+   {s:"रघुबीर",r:"Raghubeera",en:"brave Ram",hi:"वीर राम",te:"వీరుడైన రాముడు"},
+   {s:"हरषि",r:"Harashi",en:"with great joy",hi:"हर्षित होकर",te:"ఆనందంగా"},
+   {s:"उर लाये",r:"Ur Laaye",en:"embraced/held to chest",hi:"सीने से लगाया",te:"హృదయానికి హత్తుకున్నాడు"},
+ ],
+ meaning:{hi:"हनुमान जी संजीवनी बूटी लाकर लक्ष्मण जी को जिलाया। यह देख श्री राम बहुत प्रसन्न हुए और उन्हें अपने सीने से लगा लिया।",te:"హనుమాన్ సంజీవని తెచ్చి లక్ష్మణుని బ్రతికించాడు. ఇది చూసి రాముడు ఆనందంగా ఆయనను హృదయానికి హత్తుకున్నాడు.",en:"Hanuman brought the Sanjivani herb and revived Lakshman. Overjoyed, Lord Ram embraced Hanuman to his chest."},
+ moral:{hi:"मुश्किल में भी हार मत मानो। हनुमान ने पूरा पहाड़ उठा लिया!",te:"కష్టంలో ఓడిపోకు. హనుమాన్ పూర్తి కొండను ఎత్తాడు!",en:"Never give up in difficulty. Hanuman lifted an entire mountain!"},
+ scene:"sanjivani"},
+
+{id:14,type:"Chaupai",label:{hi:"चौपाई १२",te:"చౌపాయి ౧౨",en:"Chaupai 12"},
+ san:"रघुपति कीन्ही बहुत बड़ाई। तुम मम प्रिय भरतहि सम भाई॥",
+ rom:"Raghupati Keenhi Bahut Badaai. Tum Mam Priya Bharatahi Sam Bhaai.",
+ tel:"రఘుపతి కీన్హి బహుత బడాఈ। తుమ్ మమ్ ప్రియ భరతహి సమ్ భాఈ॥",
+ words:[
+   {s:"रघुपति",r:"Raghupati",en:"Lord Ram",hi:"रघुनाथ / राम",te:"రఘుపతి / రాముడు"},
+   {s:"बड़ाई",r:"Badaai",en:"praised greatly",hi:"बहुत तारीफ की",te:"చాలా పొగిడాడు"},
+   {s:"मम प्रिय",r:"Mam Priya",en:"dear to me",hi:"मुझे प्रिय",te:"నాకు ప్రియుడు"},
+   {s:"भरत सम",r:"Bharata Sam",en:"like brother Bharat",hi:"भरत के समान",te:"భరత్ వంటి"},
+ ],
+ meaning:{hi:"श्री राम ने हनुमान जी की बहुत प्रशंसा की और कहा — 'तुम मुझे अपने प्रिय भाई भरत के समान प्रिय हो।'",te:"రాముడు హనుమాన్‌ను చాలా పొగిడాడు మరియు అన్నాడు — 'నీవు నాకు ప్రియ సోదరుడైన భరత్ వంటివాడివి.'",en:"Lord Ram praised Hanuman greatly and said — 'You are as dear to me as my beloved brother Bharat.'"},
+ moral:{hi:"ईमानदार सेवा हमें अपनों का प्यार दिलाती है।",te:"నిజాయితీగా సేవ చేయడం ప్రేమను పొందుతుంది.",en:"Honest service earns the love of those we care about."},
+ scene:"messenger"},
+
+{id:15,type:"Chaupai",label:{hi:"चौपाई १३",te:"చౌపాయి ౧౩",en:"Chaupai 13"},
+ san:"सहस बदन तुम्हरो जस गावैं। अस कहि श्रीपति कंठ लगावैं॥",
+ rom:"Sahas Badan Tumharo Jas Gaavain. As Kahi Shreepati Kanth Lagaavain.",
+ tel:"సహస్ బదన్ తుమ్హరో జస్ గావైం। అస కహి శ్రీపతి కంఠ లగావైం॥",
+ words:[
+   {s:"सहस बदन",r:"Sahas Badan",en:"thousand mouths",hi:"हजार मुँह",te:"వేయి నోళ్ళు"},
+   {s:"जस गावैं",r:"Jas Gaavain",en:"sing your glory",hi:"तुम्हारा यश गाएँ",te:"నీ కీర్తి పాడతాయి"},
+   {s:"श्रीपति",r:"Shreepati",en:"Lord Ram (husband of Lakshmi)",hi:"लक्ष्मी पति / राम",te:"లక్ష్మీపతి / రాముడు"},
+   {s:"कंठ लगावैं",r:"Kanth Lagaavain",en:"embraced/hugged",hi:"गले लगाया",te:"గళానికి హత్తుకున్నాడు"},
+ ],
+ meaning:{hi:"श्री राम ने कहा — 'हजारों मुँह भी तुम्हारा यश गाएँ तो कम है।' ऐसा कहकर उन्होंने हनुमान को गले लगा लिया।",te:"రాముడు అన్నాడు — 'వేయి నోళ్ళు నీ కీర్తిని పాడినా చాలదు.' అని చెప్పి ఆయనను గళానికి హత్తుకున్నాడు.",en:"Ram said — 'Even a thousand mouths cannot fully sing your glory.' Saying this, he embraced Hanuman."},
+ moral:{hi:"जो दिल से काम करता है, उसकी तारीफ हज़ार मुँहों से होती है।",te:"మనసుతో పని చేసేవారిని వేయి నోళ్ళు పొగుడుతాయి.",en:"One who works with heart is praised by a thousand mouths."},
+ scene:"threeworlds"},
+
+{id:16,type:"Chaupai",label:{hi:"चौपाई १४",te:"చౌపాయి ౧౪",en:"Chaupai 14"},
+ san:"सनकादिक ब्रह्मादि मुनीसा। नारद सारद सहित अहीसा॥",
+ rom:"Sanakadik Brahmadi Muneesa. Narad Sarad Sahit Aheesa.",
+ tel:"సనకాదిక బ్రహ్మాది మునీసా। నారద్ శారద్ సహిత్ అహీసా॥",
+ words:[
+   {s:"सनकादिक",r:"Sanakadik",en:"sages like Sanaka",hi:"सनक आदि ऋषि",te:"సనక మొదలైన ఋషులు"},
+   {s:"ब्रह्मादि",r:"Brahmadi",en:"Brahma and others",hi:"ब्रह्मा आदि देवता",te:"బ్రహ్మ మొదలైనవారు"},
+   {s:"नारद सारद",r:"Narad Sarad",en:"Narad and Saraswati",hi:"नारद और सरस्वती",te:"నారదుడు మరియు సరస్వతి"},
+   {s:"अहीसा",r:"Aheesa",en:"king of snakes (Sheshnag)",hi:"शेषनाग",te:"శేషనాగుడు"},
+ ],
+ meaning:{hi:"सनक आदि ऋषि, ब्रह्मा आदि देवता, नारद, सरस्वती और शेषनाग सभी हनुमान जी का यश गाते हैं।",te:"సనక మొదలైన ఋషులు, బ్రహ్మ మొదలైన దేవతలు, నారదుడు, సరస్వతి మరియు శేషనాగుడు అందరూ హనుమాన్ కీర్తి పాడతారు.",en:"Sages like Sanaka, gods like Brahma, Narad, Saraswati, and Sheshnag all sing the glory of Hanuman."},
+ moral:{hi:"महान व्यक्ति को महान लोग भी सराहते हैं।",te:"గొప్పవారిని గొప్పవారు కూడా పొగుడుతారు.",en:"Even the great ones praise the truly great."},
+ scene:"guru"},
+
+{id:17,type:"Chaupai",label:{hi:"चौपाई १५",te:"చౌపాయి ౧౫",en:"Chaupai 15"},
+ san:"जम कुबेर दिगपाल जहाँ ते। कबि कोबिद कहि सके कहाँ ते॥",
+ rom:"Jam Kuber Digpaal Jahaan Te. Kabi Kobid Kahi Sake Kahaan Te.",
+ tel:"జమ్ కుబేర్ దిగ్పాల్ జహాఁ తే। కబి కోబిద్ కహి సకే కహాఁ తే॥",
+ words:[
+   {s:"जम",r:"Jam",en:"Yama, god of death",hi:"यमराज",te:"యమరాజు"},
+   {s:"कुबेर",r:"Kuber",en:"god of wealth",hi:"कुबेर देव",te:"కుబేరుడు"},
+   {s:"दिगपाल",r:"Digpaal",en:"guardians of directions",hi:"दिशाओं के रक्षक",te:"దిక్పాలురు"},
+   {s:"कबि कोबिद",r:"Kabi Kobid",en:"poets and scholars",hi:"कवि और विद्वान",te:"కవులు మరియు పండితులు"},
+ ],
+ meaning:{hi:"यमराज, कुबेर, दिशाओं के रक्षक, कवि और विद्वान सभी हनुमान जी का यश पूरी तरह नहीं कह सकते।",te:"యమరాజు, కుబేరుడు, దిక్పాలురు, కవులు మరియు పండితులు కూడా హనుమాన్ మహిమను పూర్తిగా చెప్పలేరు.",en:"Even Yama, Kuber, guardians of directions, poets and scholars cannot fully describe Hanuman's glory."},
+ moral:{hi:"जो अनंत है उसका पूरा वर्णन कोई नहीं कर सकता।",te:"అనంతమైనదాన్ని పూర్తిగా వర్ణించడం ఎవరికీ సాధ్యం కాదు.",en:"No one can fully describe what is truly infinite."},
+ scene:"threeworlds"},
+
+{id:18,type:"Chaupai",label:{hi:"चौपाई १६",te:"చౌపాయి ౧౬",en:"Chaupai 16"},
+ san:"तुम उपकार सुग्रीवहिं कीन्हा। राम मिलाय राज पद दीन्हा॥",
+ rom:"Tum Upkaar Sugreevan Keenha. Ram Milaay Raaj Pad Deenha.",
+ tel:"తుమ్ ఉపకార్ సుగ్రీవహిం కీన్హా। రామ్ మిలాయ్ రాజ్ పద్ దీన్హా॥",
+ words:[
+   {s:"उपकार",r:"Upkaar",en:"favour/help",hi:"उपकार / मदद",te:"ఉపకారం"},
+   {s:"सुग्रीव",r:"Sugreeva",en:"Sugreeva (monkey king)",hi:"सुग्रीव",te:"సుగ్రీవుడు"},
+   {s:"राम मिलाय",r:"Ram Milaay",en:"introduced to Ram",hi:"राम से मिलाया",te:"రామునితో కలిపాడు"},
+   {s:"राज पद",r:"Raaj Pad",en:"kingdom/throne",hi:"राज्य",te:"రాజ్యం"},
+ ],
+ meaning:{hi:"हनुमान जी ने सुग्रीव पर बड़ा उपकार किया — उन्हें राम से मिलाया और उनका राज्य वापस दिलाया।",te:"హనుమాన్ సుగ్రీవుడిపై గొప్ప ఉపకారం చేశాడు — రామునితో పరిచయం చేసి రాజ్యం తిరిగి ఇప్పించాడు.",en:"Hanuman did a great favour to Sugreeva — he introduced him to Ram and helped restore his kingdom."},
+ moral:{hi:"दोस्त को ज़रूरत में सही इंसान से मिलाना सबसे बड़ी मदद है।",te:"అవసరంలో మిత్రుడికి సరైన వ్యక్తిని పరిచయం చేయడం గొప్ప సహాయం.",en:"Introducing a friend to the right person at the right time is the greatest help."},
+ scene:"messenger"},
+
+{id:19,type:"Chaupai",label:{hi:"चौपाई १७",te:"చౌపాయి ౧౭",en:"Chaupai 17"},
+ san:"तुम्हरो मंत्र बिभीषन माना। लंकेश्वर भए सब जग जाना॥",
+ rom:"Tumharo Mantra Bibheeshan Maana. Lankeshwar Bhae Sab Jag Jaana.",
+ tel:"తుమ్హరో మంత్ర బిభీషన్ మానా। లంకేశ్వర్ భఏ సబ్ జగ్ జానా॥",
+ words:[
+   {s:"मंत्र",r:"Mantra",en:"advice/counsel",hi:"सलाह / मंत्र",te:"సలహా / మంత్రం"},
+   {s:"बिभीषन",r:"Bibheeshan",en:"Vibhishan",hi:"विभीषण",te:"విభీషణుడు"},
+   {s:"लंकेश्वर",r:"Lankeshwar",en:"king of Lanka",hi:"लंका के राजा",te:"లంకా రాజు"},
+   {s:"जग जाना",r:"Jag Jaana",en:"known to the world",hi:"सारी दुनिया जानती है",te:"జగత్తు అందరికీ తెలుసు"},
+ ],
+ meaning:{hi:"विभीषण ने हनुमान जी की सलाह मानी और वे लंका के राजा बने — यह बात सारी दुनिया जानती है।",te:"విభీషణుడు హనుమాన్ సలహా పాటించి లంకా రాజు అయ్యాడు — ఇది జగత్తు అందరికీ తెలుసు.",en:"Vibhishan followed Hanuman's counsel and became the king of Lanka — this is known to the whole world."},
+ moral:{hi:"अच्छी सलाह को मानो — वह तुम्हारी ज़िंदगी बदल सकती है।",te:"మంచి సలహాను పాటించు — అది నీ జీవితాన్ని మారుస్తుంది.",en:"Follow good advice — it can change your life completely."},
+ scene:"threeworlds"},
+
+{id:20,type:"Chaupai",label:{hi:"चौपाई १८",te:"చౌపాయి ౧౮",en:"Chaupai 18"},
+ san:"जुग सहस्र जोजन पर भानू। लील्यो ताहि मधुर फल जानू॥",
+ rom:"Jug Sahastra Jojan Par Bhaanu. Leelyo Taahi Madhur Phal Jaanu.",
+ tel:"జుగ్ సహస్ర జోజన్ పర్ భానూ। లీల్యో తాహి మధుర్ ఫల్ జానూ॥",
+ words:[
+   {s:"जुग सहस्र जोजन",r:"Jug Sahastra Jojan",en:"millions of miles away",hi:"लाखों मील दूर",te:"కోట్ల కోసుల దూరంలో"},
+   {s:"भानू",r:"Bhaanu",en:"the Sun",hi:"सूरज",te:"సూర్యుడు"},
+   {s:"लील्यो",r:"Leelyo",en:"swallowed/ate",hi:"निगल लिया",te:"మింగేశాడు"},
+   {s:"मधुर फल",r:"Madhur Phal",en:"sweet fruit",hi:"मीठा फल",te:"మధురమైన పండు"},
+ ],
+ meaning:{hi:"लाखों मील दूर स्थित सूरज को बालक हनुमान ने मीठा फल समझकर खा लिया था।",te:"కోట్ల కోసుల దూరంలో ఉన్న సూర్యుడిని బాల హనుమాన్ మధురమైన పండు అని భావించి మింగేశాడు.",en:"Young Hanuman swallowed the sun, which was millions of miles away, thinking it was a sweet fruit."},
+ moral:{hi:"बहादुर बच्चे असंभव को भी संभव मान लेते हैं!",te:"సాహసవంతమైన పిల్లలు అసాధ్యమైనదాన్ని సాధ్యంగా భావిస్తారు!",en:"A brave child treats the impossible as possible!"},
+ scene:"sun"},
+
+{id:21,type:"Chaupai",label:{hi:"चौपाई १९",te:"చౌపాయి ౧౯",en:"Chaupai 19"},
+ san:"प्रभु मुद्रिका मेलि मुख माहीं। जलधि लाँघि गये अचरज नाहीं॥",
+ rom:"Prabhu Mudrika Meli Mukh Maahin. Jaladhi Laanghi Gaye Acharaj Naahin.",
+ tel:"ప్రభు ముద్రికా మేలి ముఖ్ మాహీం। జలధి లాఁఘి గయే అచరజ్ నాహీం॥",
+ words:[
+   {s:"मुद्रिका",r:"Mudrika",en:"ring (Ram's ring)",hi:"राम की अँगूठी",te:"రాముని ఉంగరం"},
+   {s:"मेलि मुख",r:"Meli Mukh",en:"keeping in mouth",hi:"मुँह में रखकर",te:"నోటిలో పెట్టుకుని"},
+   {s:"जलधि",r:"Jaladhi",en:"ocean",hi:"समुद्र",te:"సముద్రం"},
+   {s:"लाँघि",r:"Laanghi",en:"crossed/leaped over",hi:"पार किया",te:"దాటాడు"},
+   {s:"अचरज नाहीं",r:"Acharaj Naahin",en:"no surprise",hi:"आश्चर्य नहीं",te:"ఆశ్చర్యం లేదు"},
+ ],
+ meaning:{hi:"राम की अँगूठी मुँह में रखकर हनुमान जी ने समुद्र पार किया — इसमें कोई आश्चर्य नहीं!",te:"రాముని ఉంగరాన్ని నోటిలో పెట్టుకుని హనుమాన్ సముద్రాన్ని దాటాడు — ఇందులో ఆశ్చర్యమేమీ లేదు!",en:"Keeping Ram's ring in his mouth, Hanuman crossed the ocean — there is no wonder in this!"},
+ moral:{hi:"जब भगवान का आशीर्वाद हो, कोई काम असंभव नहीं।",te:"భగవంతుని ఆశీర్వాదం ఉంటే ఏ పనీ అసాధ్యం కాదు.",en:"With God's blessings, nothing is impossible."},
+ scene:"ocean"},
+
+{id:22,type:"Chaupai",label:{hi:"चौपाई २०",te:"చౌపాయి ౨౦",en:"Chaupai 20"},
+ san:"दुर्गम काज जगत के जेते। सुगम अनुग्रह तुम्हरे तेते॥",
+ rom:"Durgam Kaaj Jagat Ke Jete. Sugam Anugrah Tumhare Tete.",
+ tel:"దుర్గమ కాజ్ జగత్ కే జేతే। సుగమ అనుగ్రహ్ తుమ్హరే తేతే॥",
+ words:[
+   {s:"दुर्गम काज",r:"Durgam Kaaj",en:"difficult tasks",hi:"कठिन काम",te:"కష్టమైన పనులు"},
+   {s:"सुगम",r:"Sugam",en:"easy/simple",hi:"आसान",te:"సులభంగా"},
+   {s:"अनुग्रह",r:"Anugrah",en:"grace/blessings",hi:"कृपा / आशीर्वाद",te:"అనుగ్రహం"},
+ ],
+ meaning:{hi:"जगत के सभी कठिन काम आपकी कृपा से आसान हो जाते हैं।",te:"జగత్తులోని అన్ని కష్టమైన పనులు నీ అనుగ్రహంతో సులభంగా అవుతాయి.",en:"All difficult tasks in the world become easy with your grace and blessings."},
+ moral:{hi:"मेहनत और भक्ति से बड़े से बड़ा काम भी हो जाता है।",te:"కష్టపడటం మరియు భక్తితో పెద్ద పనులు కూడా అవుతాయి.",en:"With hard work and devotion, even the greatest tasks become possible."},
+ scene:"hero"},
+
+{id:23,type:"Chaupai",label:{hi:"चौपाई २१",te:"చౌపాయి ౨౧",en:"Chaupai 21"},
+ san:"राम दुआरे तुम रखवारे। होत न आज्ञा बिनु पैसारे॥",
+ rom:"Ram Duaare Tum Rakhavaare. Hot Na Aagya Binu Paisaare.",
+ tel:"రామ్ దుఆరే తుమ్ రఖవారే। హోత్ న ఆజ్ఞా బిను పైసారే॥",
+ words:[
+   {s:"राम दुआरे",r:"Ram Duaare",en:"Ram's door/threshold",hi:"राम के द्वार",te:"రాముని ద్వారం"},
+   {s:"रखवारे",r:"Rakhavaare",en:"guardian/protector",hi:"रक्षक / द्वारपाल",te:"రక్షకుడు"},
+   {s:"आज्ञा",r:"Aagya",en:"permission/order",hi:"आज्ञा / अनुमति",te:"అనుమతి / ఆజ్ఞ"},
+   {s:"पैसारे",r:"Paisaare",en:"can enter",hi:"प्रवेश कर सकता है",te:"ప్రవేశించగలడు"},
+ ],
+ meaning:{hi:"हनुमान जी राम के द्वार के रक्षक हैं। उनकी आज्ञा के बिना कोई प्रवेश नहीं कर सकता।",te:"హనుమాన్ రాముని ద్వారానికి రక్షకుడు. ఆయన అనుమతి లేకుండా ఎవరూ ప్రవేశించలేరు.",en:"Hanuman is the guardian at Ram's door. None can enter without his permission."},
+ moral:{hi:"अपनों की रक्षा करना सबसे बड़ी सेवा है।",te:"ప్రియమైనవారిని కాపాడడం అత్యంత గొప్ప సేవ.",en:"Protecting those we love is the greatest service of all."},
+ scene:"hero"},
+
+{id:24,type:"Chaupai",label:{hi:"चौपाई २२",te:"చౌపాయి ౨౨",en:"Chaupai 22"},
+ san:"सब सुख लहै तुम्हारी सरना। तुम रच्छक काहू को डर ना॥",
+ rom:"Sab Sukh Lahai Tumhaari Sarana. Tum Rachhak Kaahu Ko Dar Na.",
+ tel:"సబ్ సుఖ్ లహై తుమ్హారీ శరణా। తుమ్ రచ్ఛక్ కాహూ కో డర్ నా॥",
+ words:[
+   {s:"सब सुख",r:"Sab Sukh",en:"all happiness",hi:"सभी सुख",te:"అన్ని సుఖాలు"},
+   {s:"तुम्हारी सरना",r:"Tumhaari Sarana",en:"your shelter",hi:"आपकी शरण",te:"నీ శరణు"},
+   {s:"रच्छक",r:"Rachhak",en:"protector",hi:"रक्षक",te:"రక్షకుడు"},
+   {s:"काहू को डर ना",r:"Kaahu Ko Dar Na",en:"no fear to anyone",hi:"किसी को डर नहीं",te:"ఎవరికీ భయం లేదు"},
+ ],
+ meaning:{hi:"जो तुम्हारी शरण में आता है उसे सभी सुख मिलते हैं। तुम रक्षक हो — तुम्हारी छाया में किसी को डर नहीं।",te:"నీ శరణు తీసుకున్నవారికి అన్ని సుఖాలు కలుగుతాయి. నీవు రక్షకుడివి — నీ నీడలో ఎవరికీ భయం లేదు.",en:"All who take shelter in you receive every happiness. You are the protector — under your shelter, no one has any fear."},
+ moral:{hi:"जो दूसरों की रक्षा करता है, उसे खुद किसी से डर नहीं लगता।",te:"ఇతరులను కాపాడేవారికి తమకు ఎవరి భయమూ ఉండదు.",en:"Those who protect others have nothing to fear themselves."},
+ scene:"prayer"},
+
+{id:25,type:"Chaupai",label:{hi:"चौपाई २३",te:"చౌపాయి ౨౩",en:"Chaupai 23"},
+ san:"आपन तेज सम्हारो आपै। तीनों लोक हाँक ते काँपै॥",
+ rom:"Aapan Tej Samhaaro Aapai. Teenon Lok Haank Te Kaanpai.",
+ tel:"ఆపన్ తేజ్ సమ్హారో ఆపై। తీనోం లోక్ హాంక్ తే కాంపై॥",
+ words:[
+   {s:"तेज",r:"Tej",en:"brilliance/power",hi:"तेज / शक्ति",te:"తేజస్సు"},
+   {s:"सम्हारो",r:"Samhaaro",en:"you control/hold",hi:"संभालते हो",te:"నీవు నిగ్రహిస్తావు"},
+   {s:"हाँक",r:"Haank",en:"roar/call",hi:"दहाड़ / गर्जना",te:"గర్జన / హుంకారం"},
+   {s:"काँपै",r:"Kaanpai",en:"tremble/shake",hi:"काँपते हैं",te:"వణుకుతాయి"},
+ ],
+ meaning:{hi:"आप ही अपने तेज को संभाल सकते हैं। आपकी गर्जना से तीनों लोक काँप जाते हैं।",te:"నీవు మాత్రమే నీ తేజస్సును నిగ్రహించగలవు. నీ హుంకారానికి ముల్లోకాలు వణుకుతాయి.",en:"Only you can contain your own brilliance. At your roar, all three worlds tremble."},
+ moral:{hi:"असली ताकत वो है जो खुद पर काबू रख सके।",te:"నిజమైన శక్తి అంటే తనను తాను నిగ్రహించుకోగలిగేది.",en:"True strength is the ability to control oneself."},
+ scene:"hero"},
+
+{id:26,type:"Chaupai",label:{hi:"चौपाई २४",te:"చౌపాయి ౨౪",en:"Chaupai 24"},
+ san:"भूत पिशाच निकट नहिं आवै। महाबीर जब नाम सुनावै॥",
+ rom:"Bhoot Pishaach Nikat Nahin Aavai. Mahaveer Jab Naam Sunaavai.",
+ tel:"భూత పిశాచ్ నికట్ నహిం ఆవై। మహాబీర్ జబ్ నామ్ సునావై॥",
+ words:[
+   {s:"भूत पिशाच",r:"Bhoot Pishaach",en:"evil spirits",hi:"भूत-प्रेत",te:"దెయ్యాలు / అపశక్తులు"},
+   {s:"निकट",r:"Nikat",en:"near/close",hi:"पास",te:"దగ్గరకు"},
+   {s:"नाम सुनावै",r:"Naam Sunaavai",en:"when name is heard",hi:"नाम सुनते ही",te:"పేరు వినగానే"},
+ ],
+ meaning:{hi:"जब हनुमान जी का नाम सुनाई देता है तो भूत-प्रेत पास नहीं आते।",te:"హనుమాన్ నామం వినగానే దెయ్యాలు మరియు అపశక్తులు దగ్గరకు రావు.",en:"When the name of Mahaveer Hanuman is heard, evil spirits and ghosts dare not come near."},
+ moral:{hi:"भगवान का नाम सबसे बड़ी ढाल है।",te:"భగవంతుని నామం అతిపెద్ద రక్షాకవచం.",en:"The name of God is the greatest shield against all evil."},
+ scene:"thoughts"},
+
+{id:27,type:"Chaupai",label:{hi:"चौपाई २५",te:"చౌపాయి ౨౫",en:"Chaupai 25"},
+ san:"नासै रोग हरै सब पीरा। जपत निरंतर हनुमत बीरा॥",
+ rom:"Naasai Rog Harai Sab Peera. Japat Nirantar Hanumat Beera.",
+ tel:"నాసై రోగ్ హరై సబ్ పీరా। జపత్ నిరంతర్ హనుమత్ బీరా॥",
+ words:[
+   {s:"नासै रोग",r:"Naasai Rog",en:"diseases destroyed",hi:"रोग नष्ट होते हैं",te:"రోగాలు నాశనమవుతాయి"},
+   {s:"हरै सब पीरा",r:"Harai Sab Peera",en:"all pain removed",hi:"सब दर्द दूर होते हैं",te:"అన్ని బాధలు తొలగుతాయి"},
+   {s:"जपत निरंतर",r:"Japat Nirantar",en:"chanting continuously",hi:"लगातार जप करने से",te:"నిరంతరం జపిస్తే"},
+ ],
+ meaning:{hi:"हनुमान जी का निरंतर जप करने से सभी रोग नष्ट होते हैं और सब दर्द दूर हो जाते हैं।",te:"హనుమాన్ నామాన్ని నిరంతరం జపించడం వల్ల అన్ని రోగాలు నాశనమై అన్ని బాధలు తొలగుతాయి.",en:"Continuously chanting Hanuman's name destroys all diseases and removes all pain."},
+ moral:{hi:"नियमित प्रार्थना मन और शरीर दोनों को स्वस्थ रखती है।",te:"నియమిత ప్రార్థన మనసు మరియు శరీరం రెండింటినీ ఆరోగ్యంగా ఉంచుతుంది.",en:"Regular prayer keeps both the mind and body healthy."},
+ scene:"prayer"},
+
+{id:28,type:"Chaupai",label:{hi:"चौपाई २६",te:"చౌపాయి ౨౬",en:"Chaupai 26"},
+ san:"संकट से हनुमान छुड़ावै। मन क्रम बचन ध्यान जो लावै॥",
+ rom:"Sankat Se Hanuman Chhudaavai. Man Kram Bachan Dhyan Jo Laavai.",
+ tel:"సంకట్ సే హనుమాన్ ఛుడావై। మన్ క్రమ్ బచన్ ధ్యాన్ జో లావై॥",
+ words:[
+   {s:"संकट",r:"Sankat",en:"trouble/difficulty",hi:"संकट / मुसीबत",te:"కష్టం / సంకటం"},
+   {s:"छुड़ावै",r:"Chhudaavai",en:"frees/rescues",hi:"मुक्त करते हैं",te:"విడిపిస్తాడు"},
+   {s:"मन क्रम बचन",r:"Man Kram Bachan",en:"thought word and deed",hi:"मन, कर्म, वचन",te:"మనసు, కర్మ, వాక్కు"},
+   {s:"ध्यान",r:"Dhyan",en:"meditation/focus",hi:"ध्यान / एकाग्रता",te:"ధ్యానం"},
+ ],
+ meaning:{hi:"जो मन, कर्म और वचन से हनुमान जी का ध्यान करता है, उसे वे सभी संकटों से मुक्त कर देते हैं।",te:"మనసు, కర్మ, వాక్కుతో హనుమాన్‌ను ధ్యానించేవారిని ఆయన అన్ని కష్టాల నుండి విముక్తుడిని చేస్తాడు.",en:"Whoever meditates on Hanuman with thought, word and deed is rescued from all difficulties."},
+ moral:{hi:"जब मन, कर्म और बात एक हों — तब भगवान भी मदद करते हैं।",te:"మనసు, పని, మాటలు ఒకటిగా ఉన్నప్పుడు భగవంతుడు సహాయం చేస్తాడు.",en:"When thought, deed and word align — even God steps in to help."},
+ scene:"threeworlds"},
+
+{id:29,type:"Chaupai",label:{hi:"चौपाई २७",te:"చౌపాయి ౨౭",en:"Chaupai 27"},
+ san:"सब पर राम तपस्वी राजा। तिन के काज सकल तुम साजा॥",
+ rom:"Sab Par Ram Tapasvi Raja. Tin Ke Kaaj Sakal Tum Saaja.",
+ tel:"సబ్ పర్ రామ్ తపస్వీ రాజా। తిన్ కే కాజ్ సకల్ తుమ్ సాజా॥",
+ words:[
+   {s:"तपस्वी राजा",r:"Tapasvi Raja",en:"king of ascetics",hi:"तपस्वी राजा",te:"తపస్వి రాజు"},
+   {s:"काज सकल",r:"Kaaj Sakal",en:"all tasks/works",hi:"सभी काम",te:"అన్ని పనులు"},
+   {s:"साजा",r:"Saaja",en:"accomplished",hi:"पूरे किए",te:"పూర్తి చేశావు"},
+ ],
+ meaning:{hi:"सब पर राजा राम तपस्वी हैं। उनके सभी कार्य आपने पूरे किए।",te:"రాముడు అందరి పై తపస్వి రాజు. ఆయన అన్ని పనులను నీవు పూర్తి చేశావు.",en:"Ram is the king and great ascetic over all. You have accomplished all of his tasks."},
+ moral:{hi:"सेवा में कोई काम छोटा नहीं होता।",te:"సేవలో ఏ పని చిన్నది కాదు.",en:"In service, no task is too small."},
+ scene:"messenger"},
+
+{id:30,type:"Chaupai",label:{hi:"चौपाई २८",te:"చౌపాయి ౨౮",en:"Chaupai 28"},
+ san:"और मनोरथ जो कोई लावै। सोई अमित जीवन फल पावै॥",
+ rom:"Aur Manorath Jo Koi Laavai. Soi Amit Jeevan Phal Paavai.",
+ tel:"ఔర్ మనోరథ్ జో కోయి లావై। సోయి అమిత్ జీవన్ ఫల్ పావై॥",
+ words:[
+   {s:"मनोरथ",r:"Manorath",en:"wishes/desires",hi:"मनोकामना",te:"మనోరథం / కోరికలు"},
+   {s:"अमित",r:"Amit",en:"unlimited/boundless",hi:"असीमित",te:"అపరిమితమైన"},
+   {s:"जीवन फल",r:"Jeevan Phal",en:"fruits of life",hi:"जीवन का फल",te:"జీవిత ఫలం"},
+ ],
+ meaning:{hi:"जो कोई भी हनुमान जी के पास अपनी मनोकामना लेकर आता है, उसे असीमित जीवन-फल की प्राप्ति होती है।",te:"హనుమాన్‌కు తన కోరికలు తెచ్చుకున్నవారికి అపరిమితమైన జీవిత ఫలం లభిస్తుంది.",en:"Whoever brings their wishes to Hanuman receives the unlimited fruits of life."},
+ moral:{hi:"भक्ति से माँगो — फल ज़रूर मिलेगा।",te:"భక్తితో అడుగు — ఫలం తప్పక దొరుకుతుంది.",en:"Ask with devotion — the reward will surely come."},
+ scene:"prayer"},
+
+{id:31,type:"Chaupai",label:{hi:"चौपाई २९",te:"చౌపాయి ౨౯",en:"Chaupai 29"},
+ san:"चारों जुग परताप तुम्हारा। है परसिद्ध जगत उजियारा॥",
+ rom:"Chaaron Jug Partaap Tumhaara. Hai Parsiddh Jagat Ujiyaara.",
+ tel:"చారోం జుగ్ పర్తాప్ తుమ్హారా। హై పర్సిద్ధ్ జగత్ ఉజియారా॥",
+ words:[
+   {s:"चारों जुग",r:"Chaaron Jug",en:"all four ages",hi:"चारों युग",te:"నాలుగు యుగాలు"},
+   {s:"परताप",r:"Partaap",en:"glory/renown",hi:"प्रताप / महिमा",te:"ప్రతాపం"},
+   {s:"परसिद्ध",r:"Parsiddh",en:"well known/famous",hi:"प्रसिद्ध",te:"ప్రసిద్ధం"},
+   {s:"जगत उजियारा",r:"Jagat Ujiyaara",en:"light of the world",hi:"जग को रोशन करने वाले",te:"జగత్ వెలుతురు"},
+ ],
+ meaning:{hi:"चारों युगों में आपका प्रताप प्रसिद्ध है और आप जगत को प्रकाशित करते हैं।",te:"నాలుగు యుగాలలో నీ ప్రతాపం ప్రసిద్ధమైనది మరియు నీవు జగత్తుకు వెలుతురు.",en:"Your glory is renowned across all four ages, and you illuminate the whole world."},
+ moral:{hi:"अच्छे काम की चमक युगों तक रहती है।",te:"మంచి పని యొక్క కాంతి యుగాల వరకు ఉంటుంది.",en:"The light of good deeds shines across ages."},
+ scene:"threeworlds"},
+
+{id:32,type:"Chaupai",label:{hi:"चौपाई ३०",te:"చౌపాయి ౩౦",en:"Chaupai 30"},
+ san:"साधु संत के तुम रखवारे। असुर निकंदन राम दुलारे॥",
+ rom:"Saadhu Sant Ke Tum Rakhavaare. Asur Nikanadan Ram Dulaare.",
+ tel:"సాధు సంత కే తుమ్ రఖవారే। అసుర్ నికందన్ రామ్ దులారే॥",
+ words:[
+   {s:"साधु संत",r:"Saadhu Sant",en:"holy men/sages",hi:"साधु-संत",te:"సాధువులు / సంతులు"},
+   {s:"रखवारे",r:"Rakhavaare",en:"protector",hi:"रक्षक",te:"రక్షకుడు"},
+   {s:"असुर निकंदन",r:"Asur Nikanadan",en:"destroyer of demons",hi:"राक्षस नाशक",te:"రాక్షస సంహారకుడు"},
+   {s:"राम दुलारे",r:"Ram Dulaare",en:"beloved of Ram",hi:"राम के प्रिय",te:"రాముని ప్రియుడు"},
+ ],
+ meaning:{hi:"हनुमान जी साधु-संतों के रक्षक हैं, राक्षसों के नाशक हैं और राम के प्रिय हैं।",te:"హనుమాన్ సాధువులకు రక్షకుడు, రాక్షసులకు నాశకుడు మరియు రాముని ప్రియుడు.",en:"Hanuman is the protector of saints, destroyer of demons, and the beloved of Ram."},
+ moral:{hi:"अच्छों की रक्षा करो और बुराई का साथ मत दो।",te:"మంచివారిని కాపాడు మరియు చెడుతో చేతులు కలుపకు.",en:"Protect the good and never side with evil."},
+ scene:"hero"},
+
+{id:33,type:"Chaupai",label:{hi:"चौपाई ३१",te:"చౌపాయి ౩౧",en:"Chaupai 31"},
+ san:"अष्ट सिद्धि नव निधि के दाता। अस बर दीन जानकी माता॥",
+ rom:"Asht Siddhi Nav Nidhi Ke Daata. As Bar Deen Jaanaki Maata.",
+ tel:"అష్ట సిద్ధి నవ నిధి కే దాతా। అస్ బర్ దీన్ జానకీ మాతా॥",
+ words:[
+   {s:"अष्ट सिद्धि",r:"Asht Siddhi",en:"eight divine powers",hi:"आठ दिव्य शक्तियाँ",te:"ఎనిమిది దివ్య శక్తులు"},
+   {s:"नव निधि",r:"Nav Nidhi",en:"nine treasures",hi:"नौ निधियाँ",te:"తొమ్మిది నిధులు"},
+   {s:"दाता",r:"Daata",en:"giver",hi:"देने वाला",te:"ఇచ్చేవాడు"},
+   {s:"जानकी माता",r:"Jaanaki Maata",en:"mother Sita",hi:"माँ सीता",te:"జానకీ మాత (సీత)"},
+ ],
+ meaning:{hi:"आठ सिद्धियाँ और नौ निधियाँ देने का वरदान माँ सीता ने आपको दिया है।",te:"ఎనిమిది సిద్ధులు మరియు తొమ్మిది నిధులను ఇచ్చే వరాన్ని జానకీ మాత నీకు ప్రసాదించింది.",en:"Mother Sita has blessed you with the power to grant all eight divine powers and nine treasures."},
+ moral:{hi:"माँ का आशीर्वाद सबसे बड़ी दौलत है।",te:"అమ్మ ఆశీర్వాదం అన్నింటిలో గొప్ప సంపద.",en:"A mother's blessing is the greatest wealth of all."},
+ scene:"anjani"},
+
+{id:34,type:"Chaupai",label:{hi:"चौपाई ३२",te:"చౌపాయి ౩౨",en:"Chaupai 32"},
+ san:"राम रसायन तुम्हरे पासा। सदा रहो रघुपति के दासा॥",
+ rom:"Ram Rasayan Tumhare Paasa. Sada Raho Raghupati Ke Daasa.",
+ tel:"రామ్ రసాయన్ తుమ్హరే పాసా। సదా రహో రఘుపతి కే దాసా॥",
+ words:[
+   {s:"राम रसायन",r:"Ram Rasayan",en:"elixir of Ram's name",hi:"राम-नाम रूपी अमृत",te:"రాముని నామమనే అమృతం"},
+   {s:"पासा",r:"Paasa",en:"with you/in your possession",hi:"आपके पास",te:"నీ వద్ద"},
+   {s:"रघुपति के दासा",r:"Raghupati Ke Daasa",en:"servant of Ram",hi:"रघुपति के दास",te:"రఘుపతి సేవకుడు"},
+ ],
+ meaning:{hi:"राम का नाम रूपी अमृत सदा आपके पास रहता है। आप सदा रघुपति राम के दास बने रहें।",te:"రాముని నామమనే అమృతం సదా నీ వద్ద ఉంటుంది. నీవు సదా రఘుపతి దాసుడిగా ఉండు.",en:"The elixir of Ram's name is always with you. You remain forever the devoted servant of Ram."},
+ moral:{hi:"भगवान का नाम सबसे बड़ी दवा है।",te:"భగవంతుని నామం అతిపెద్ద మందు.",en:"The name of God is the greatest medicine."},
+ scene:"prayer"},
+
+{id:35,type:"Chaupai",label:{hi:"चौपाई ३३",te:"చౌపాయి ౩౩",en:"Chaupai 33"},
+ san:"तुम्हरे भजन राम को पावै। जनम जनम के दुख बिसरावै॥",
+ rom:"Tumhare Bhajan Ram Ko Paavai. Janam Janam Ke Dukh Bisraavai.",
+ tel:"తుమ్హరే భజన్ రామ్ కో పావై। జనమ్ జనమ్ కే దుఖ్ బిస్రావై॥",
+ words:[
+   {s:"भजन",r:"Bhajan",en:"devotional prayer",hi:"भजन / प्रार्थना",te:"భజన / ప్రార్థన"},
+   {s:"जनम जनम",r:"Janam Janam",en:"birth after birth",hi:"जन्म-जन्मांतर",te:"జన్మ జన్మలు"},
+   {s:"दुख बिसरावै",r:"Dukh Bisraavai",en:"sorrows forgotten",hi:"दुख भूल जाते हैं",te:"దుఃఖాలు మరచిపోతాయి"},
+ ],
+ meaning:{hi:"आपके भजन से राम की प्राप्ति होती है और जन्म-जन्मांतर के दुख भूल जाते हैं।",te:"నీ భజనతో రాముడు లభిస్తాడు మరియు జన్మ జన్మల దుఃఖాలు మరచిపోతాయి.",en:"By singing your praises, one attains Ram and forgets the sorrows of many lifetimes."},
+ moral:{hi:"भजन और प्रार्थना मन के सारे बोझ हल्के कर देती है।",te:"భజన మరియు ప్రార్థన మనసు బరువులన్నీ తగ్గిస్తాయి.",en:"Prayer and devotion lighten the burdens of the heart."},
+ scene:"guru"},
+
+{id:36,type:"Chaupai",label:{hi:"चौपाई ३४",te:"చౌపాయి ౩౪",en:"Chaupai 34"},
+ san:"अंत काल रघुबर पुर जाई। जहाँ जन्म हरिभक्त कहाई॥",
+ rom:"Ant Kaal Raghubar Pur Jaai. Jahaan Janam Haribhakt Kahaai.",
+ tel:"అంత్ కాల్ రఘుబర్ పుర్ జాఈ। జహాఁ జనమ్ హరిభక్త్ కహాఈ॥",
+ words:[
+   {s:"अंत काल",r:"Ant Kaal",en:"at life's end",hi:"जीवन के अंत में",te:"జీవిత చివరలో"},
+   {s:"रघुबर पुर",r:"Raghubar Pur",en:"Ram's abode",hi:"राम का धाम",te:"రాముని నివాసం"},
+   {s:"हरिभक्त",r:"Haribhakt",en:"devotee of God",hi:"हरि के भक्त",te:"హరి భక్తుడు"},
+ ],
+ meaning:{hi:"जीवन के अंत में ऐसे भक्त राम के धाम को जाते हैं और जहाँ भी जन्म लें, हरि के भक्त कहलाते हैं।",te:"జీవిత చివరలో అలాంటి భక్తులు రాముని నివాసానికి వెళ్తారు మరియు ఎక్కడ జన్మించినా హరి భక్తులు అని పిలువబడతారు.",en:"At life's end, such devotees go to Ram's abode, and wherever born, are known as devotees of God."},
+ moral:{hi:"जीवन भर अच्छा करो — अंत भी अच्छा होगा।",te:"జీవితంపొడవునా మంచి చేయి — చివరి కూడా మంచిగా ఉంటుంది.",en:"Do good throughout life — even your end will be blessed."},
+ scene:"threeworlds"},
+
+{id:37,type:"Chaupai",label:{hi:"चौपाई ३५",te:"చౌపాయి ౩౫",en:"Chaupai 35"},
+ san:"और देवता चित्त न धरई। हनुमत सेई सर्ब सुख करई॥",
+ rom:"Aur Devta Chitt Na Dharai. Hanumat Sei Sarb Sukh Karai.",
+ tel:"ఔర్ దేవతా చిత్త్ న ధరఈ। హనుమత్ సేఈ సర్బ్ సుఖ్ కరఈ॥",
+ words:[
+   {s:"और देवता",r:"Aur Devta",en:"other gods",hi:"अन्य देवता",te:"ఇతర దేవతలు"},
+   {s:"चित्त न धरई",r:"Chitt Na Dharai",en:"don't need to think of",hi:"चित्त में न रखें",te:"మనసులో ఉంచనక్కర్లేదు"},
+   {s:"हनुमत सेई",r:"Hanumat Sei",en:"serve Hanuman",hi:"हनुमान की सेवा करें",te:"హనుమాన్‌ను సేవించు"},
+   {s:"सर्ब सुख",r:"Sarb Sukh",en:"all happiness",hi:"सभी सुख",te:"అన్ని సుఖాలు"},
+ ],
+ meaning:{hi:"अन्य देवताओं का ध्यान न करें — केवल हनुमान जी की सेवा से ही सभी सुख मिल जाते हैं।",te:"ఇతర దేవతలను మనసులో ఉంచుకోనక్కర్లేదు — హనుమాన్ సేవతోనే అన్ని సుఖాలు లభిస్తాయి.",en:"There is no need to think of other gods — serving Hanuman alone brings all happiness."},
+ moral:{hi:"एक में ध्यान लगाओ — भटकाव से सफलता नहीं मिलती।",te:"ఒకటిపై దృష్టి పెట్టు — చెదరిపోవడం విజయాన్ని ఇవ్వదు.",en:"Focus on one thing — scattered attention brings no success."},
+ scene:"guru"},
+
+{id:38,type:"Chaupai",label:{hi:"चौपाई ३६",te:"చౌపాయి ౩౬",en:"Chaupai 36"},
+ san:"संकट कटै मिटै सब पीरा। जो सुमिरै हनुमत बलबीरा॥",
+ rom:"Sankat Katai Mitai Sab Peera. Jo Sumirai Hanumat Balbeera.",
+ tel:"సంకట్ కటై మిటై సబ్ పీరా। జో సుమిరై హనుమత్ బల్‌బీరా॥",
+ words:[
+   {s:"संकट कटै",r:"Sankat Katai",en:"troubles cut away",hi:"संकट कट जाते हैं",te:"కష్టాలు తొలగుతాయి"},
+   {s:"मिटै सब पीरा",r:"Mitai Sab Peera",en:"all pain erased",hi:"सब दर्द मिट जाते हैं",te:"అన్ని నొప్పులు తొలగుతాయి"},
+   {s:"जो सुमिरै",r:"Jo Sumirai",en:"whoever remembers",hi:"जो स्मरण करता है",te:"ఎవరు స్మరిస్తే"},
+   {s:"बलबीरा",r:"Balbeera",en:"powerful hero",hi:"शक्तिशाली वीर",te:"శక్తిమంతమైన వీరుడు"},
+ ],
+ meaning:{hi:"जो कोई भी शक्तिशाली हनुमान को याद करता है, उसके सभी संकट कट जाते हैं और दर्द मिट जाते हैं।",te:"శక్తిమంతుడైన హనుమాన్‌ను ఎవరు స్మరిస్తే వారి కష్టాలు తొలగిపోయి అన్ని నొప్పులు మాయమవుతాయి.",en:"Whoever remembers mighty Hanuman has all troubles cut away and all pain erased."},
+ moral:{hi:"मुश्किल में हनुमान जी को याद करो — राहत मिलेगी।",te:"కష్టంలో హనుమాన్‌ను స్మరించు — ఉపశమనం కలుగుతుంది.",en:"Remember Hanuman in difficulty — relief will come."},
+ scene:"prayer"},
+
+{id:39,type:"Chaupai",label:{hi:"चौपाई ३७",te:"చౌపాయి ౩౭",en:"Chaupai 37"},
+ san:"जय जय जय हनुमान गोसाईं। कृपा करहु गुरु देव की नाईं॥",
+ rom:"Jai Jai Jai Hanuman Gosaain. Kripa Karahu Guru Dev Ki Naain.",
+ tel:"జయ్ జయ్ జయ్ హనుమాన్ గోసాఈం। కృపా కరహు గురు దేవ్ కీ నాఈం॥",
+ words:[
+   {s:"जय जय जय",r:"Jai Jai Jai",en:"triple victory/glory",hi:"तीन बार जय",te:"మూడుసార్లు జయం"},
+   {s:"गोसाईं",r:"Gosaain",en:"lord/master",hi:"स्वामी",te:"ప్రభువు"},
+   {s:"कृपा करहु",r:"Kripa Karahu",en:"please be gracious",hi:"कृपा करें",te:"దయ చూపించు"},
+   {s:"गुरु देव की नाईं",r:"Guru Dev Ki Naain",en:"like a divine guru",hi:"गुरु देव की तरह",te:"దేవుడైన గురువులా"},
+ ],
+ meaning:{hi:"जय जय जय हनुमान जी! कृपा करें जैसे गुरु और देव करते हैं।",te:"జయ జయ జయ హనుమాన్! గురువు మరియు దేవుడిలా దయ చూపించు.",en:"Victory, victory, victory to Hanuman! Please be gracious like a divine teacher and lord."},
+ moral:{hi:"खुशी को तीन बार कहो — वह दोगुनी हो जाती है!",te:"ఆనందాన్ని మూడుసార్లు చెప్పు — అది రెట్టింపవుతుంది!",en:"Say joy three times — it doubles every time!"},
+ scene:"threeworlds"},
+
+{id:40,type:"Chaupai",label:{hi:"चौपाई ३८",te:"చౌపాయి ౩౮",en:"Chaupai 38"},
+ san:"जो सत बार पाठ कर कोई। छूटहि बंदि महा सुख होई॥",
+ rom:"Jo Sat Baar Paath Kar Koi. Chhutahi Bandi Maha Sukh Hoi.",
+ tel:"జో సత్ బార్ పాఠ్ కర్ కోఈ। ఛూటహి బంది మహా సుఖ్ హోఈ॥",
+ words:[
+   {s:"सत बार",r:"Sat Baar",en:"one hundred times",hi:"सौ बार",te:"వంద సార్లు"},
+   {s:"पाठ",r:"Paath",en:"recitation",hi:"पाठ करना",te:"పాఠం చేయడం"},
+   {s:"बंदि",r:"Bandi",en:"bondage/chains",hi:"बंधन",te:"బంధనాలు"},
+   {s:"महा सुख",r:"Maha Sukh",en:"great happiness",hi:"महान खुशी",te:"మహా సుఖం"},
+ ],
+ meaning:{hi:"जो भी सौ बार हनुमान चालीसा का पाठ करता है, उसके सभी बंधन टूट जाते हैं और उसे महान सुख की प्राप्ति होती है।",te:"ఎవరైతే వంద సార్లు హనుమాన్ చాలీసా పాఠం చేస్తారో, వారి అన్ని బంధనాలు తెగిపోయి మహా సుఖం కలుగుతుంది.",en:"Whoever recites this Chalisa one hundred times is freed from all bondage and attains great happiness."},
+ moral:{hi:"अभ्यास से चमत्कार होता है — 100 बार पढ़ने से फर्क ज़रूर पड़ता है।",te:"అభ్యాసం వల్ల అద్భుతాలు జరుగుతాయి — 100 సార్లు చదివితే తేడా తప్పక కనిపిస్తుంది.",en:"Practice creates miracles — reading 100 times makes a real difference."},
+ scene:"ocean"},
+
+{id:41,type:"Chaupai",label:{hi:"चौपाई ३९",te:"చౌపాయి ౩౯",en:"Chaupai 39"},
+ san:"जो यह पढ़ै हनुमान चालीसा। होय सिद्धि साखी गौरीसा॥",
+ rom:"Jo Yah Padhai Hanuman Chalisa. Hoy Siddhi Saakhi Gaurisa.",
+ tel:"జో యహ్ పఢై హనుమాన్ చాలీసా। హోయ్ సిద్ధి సాఖీ గౌరీసా॥",
+ words:[
+   {s:"यह पढ़ै",r:"Yah Padhai",en:"reads this",hi:"इसे पढ़ता है",te:"దీన్ని చదువుతాడు"},
+   {s:"हनुमान चालीसा",r:"Hanuman Chalisa",en:"this sacred text",hi:"हनुमान चालीसा",te:"హనుమాన్ చాలీసా"},
+   {s:"होय सिद्धि",r:"Hoy Siddhi",en:"attains perfection",hi:"सिद्धि मिलती है",te:"సిద్ధి కలుగుతుంది"},
+   {s:"साखी गौरीसा",r:"Saakhi Gaurisa",en:"Shiva is witness",hi:"शिव साक्षी हैं",te:"శివుడు సాక్షి"},
+ ],
+ meaning:{hi:"जो हनुमान चालीसा पढ़ता है उसे सिद्धि प्राप्त होती है — इसके साक्षी स्वयं शिव जी हैं।",te:"హనుమాన్ చాలీసా చదివేవారికి సిద్ధి కలుగుతుంది — ఇందుకు శివుడు స్వయంగా సాక్షి.",en:"Whoever reads this Chalisa attains perfection — Lord Shiva himself is witness to this."},
+ moral:{hi:"जो भी सीखते हो, पूरे मन से सीखो — फल ज़रूर मिलेगा।",te:"ఏదైనా నేర్చుకుంటే మనసా నేర్చుకో — ఫలం తప్పక వస్తుంది.",en:"Whatever you learn, learn it wholeheartedly — the reward will always come."},
+ scene:"guru"},
+
+{id:42,type:"Doha",label:{hi:"उत्तर दोहा",te:"ఉత్తర దోహా",en:"Final Doha"},
+ san:"पवनतनय संकट हरन, मंगल मूरति रूप। राम लखन सीता सहित, हृदय बसहु सुर भूप॥",
+ rom:"Pavan Tanay Sankat Haran, Mangal Moorati Roop. Ram Lakhan Seeta Sahit, Hriday Basahu Sur Bhoop.",
+ tel:"పవన్‌తనయ్ సంకట్ హరన్, మంగళ మూరతి రూప్। రామ్ లఖన్ సీతా సహిత్, హృదయ్ బసహు సుర్ భూప్॥",
+ words:[
+   {s:"पवनतनय",r:"Pavan Tanay",en:"son of wind",hi:"वायु पुत्र",te:"వాయు పుత్రుడు"},
+   {s:"संकट हरन",r:"Sankat Haran",en:"remover of troubles",hi:"संकट हरने वाले",te:"కష్టాలను తొలగించేవాడు"},
+   {s:"मंगल मूरति",r:"Mangal Moorati",en:"auspicious form",hi:"मंगलकारी रूप",te:"మంగళకర రూపం"},
+   {s:"हृदय बसहु",r:"Hriday Basahu",en:"dwell in heart",hi:"हृदय में बसो",te:"హృదయంలో నివసించు"},
+   {s:"सुर भूप",r:"Sur Bhoop",en:"king of gods",hi:"देवों के राजा",te:"దేవతల రాజు"},
+ ],
+ meaning:{hi:"हे वायुपुत्र, संकट-हरण, मंगलमूर्ति हनुमान जी! राम, लक्ष्मण और सीता के साथ हमारे हृदय में निवास करें।",te:"వాయు పుత్రా, సంకట నివారణా, మంగళకర రూపా హనుమాన్! రాముడు, లక్ష్మణుడు, సీత సహా మా హృదయంలో నివసించు.",en:"O son of the Wind, remover of troubles, embodiment of auspiciousness — please dwell in our hearts with Ram, Lakshman and Sita."},
+ moral:{hi:"जय हनुमान! वे हमेशा हमारे दिल में रहते हैं।",te:"జయ హనుమాన్! ఆయన సదా మన హృదయంలో ఉంటాడు.",en:"Jai Hanuman! He always lives in our hearts."},
+ scene:"prayer"},
+];
+
+// ═══════════════════════════════════════════════════════════
+// BABY HANUMAN CHILDHOOD ILLUSTRATION (used for all verses)
+// ═══════════════════════════════════════════════════════════
+const BABY_HANUMAN=`<svg width="520" height="260" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky background -->
+  <rect x="0" y="0" width="520" height="180" rx="0" fill="#FEF9E7"/>
+  <!-- Fluffy clouds -->
+  <ellipse cx="60" cy="38" rx="36" ry="18" fill="#fff" opacity=".85"/>
+  <ellipse cx="88" cy="30" rx="28" ry="15" fill="#fff" opacity=".9"/>
+  <ellipse cx="38" cy="34" rx="22" ry="13" fill="#fff" opacity=".8"/>
+  <ellipse cx="430" cy="44" rx="42" ry="20" fill="#fff" opacity=".85"/>
+  <ellipse cx="462" cy="34" rx="30" ry="16" fill="#fff" opacity=".9"/>
+  <ellipse cx="408" cy="40" rx="24" ry="14" fill="#fff" opacity=".8"/>
+  <ellipse cx="240" cy="22" rx="34" ry="16" fill="#fff" opacity=".7"/>
+  <!-- Sun with rays -->
+  <circle cx="468" cy="52" r="28" fill="#FDE047" stroke="#FBBF24" stroke-width="2.5"/>
+  <circle cx="468" cy="52" r="20" fill="#FEF08A"/>
+  <line x1="468" y1="16" x2="468" y2="8" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="492" y1="28" x2="498" y2="22" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="504" y1="52" x2="512" y2="52" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="492" y1="76" x2="498" y2="82" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="444" y1="28" x2="438" y2="22" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Smiley face on sun -->
+  <circle cx="462" cy="48" r="3" fill="#D97706"/>
+  <circle cx="474" cy="48" r="3" fill="#D97706"/>
+  <path d="M461 56 Q468 61 475 56" stroke="#D97706" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Green ground hill -->
+  <ellipse cx="260" cy="240" rx="300" ry="80" fill="#86EFAC" opacity=".5"/>
+  <rect x="0" y="210" width="520" height="50" fill="#4ADE80" opacity=".35"/>
+  <!-- Flowers on ground -->
+  <circle cx="40" cy="214" r="6" fill="#FDE047"/><circle cx="40" cy="207" r="4" fill="#FDE047"/>
+  <line x1="40" y1="220" x2="40" y2="230" stroke="#16A34A" stroke-width="2"/>
+  <circle cx="480" cy="216" r="6" fill="#F472B6"/><circle cx="480" cy="209" r="4" fill="#F472B6"/>
+  <line x1="480" y1="222" x2="480" y2="232" stroke="#16A34A" stroke-width="2"/>
+  <circle cx="120" cy="218" r="5" fill="#FB923C"/>
+  <line x1="120" y1="223" x2="120" y2="232" stroke="#16A34A" stroke-width="2"/>
+  <circle cx="390" cy="216" r="5" fill="#A78BFA"/>
+  <line x1="390" y1="221" x2="390" y2="232" stroke="#16A34A" stroke-width="2"/>
+  <!-- Tree left -->
+  <rect x="28" y="130" width="12" height="80" rx="4" fill="#92400E"/>
+  <ellipse cx="34" cy="120" rx="30" ry="38" fill="#16A34A"/>
+  <ellipse cx="20" cy="128" rx="18" ry="22" fill="#22C55E"/>
+  <ellipse cx="50" cy="124" rx="18" ry="22" fill="#22C55E"/>
+  <!-- Tree right -->
+  <rect x="468" y="140" width="12" height="70" rx="4" fill="#92400E"/>
+  <ellipse cx="474" cy="130" rx="28" ry="34" fill="#16A34A"/>
+  <ellipse cx="460" cy="138" rx="16" ry="20" fill="#22C55E"/>
+  <ellipse cx="488" cy="134" rx="16" ry="20" fill="#22C55E"/>
+  <!-- Small hill/rock baby sits on -->
+  <ellipse cx="260" cy="215" rx="70" ry="22" fill="#D97706" opacity=".35"/>
+  <ellipse cx="260" cy="213" rx="55" ry="16" fill="#FBBF24" opacity=".4"/>
+
+  <!-- ── BABY HANUMAN body ── -->
+  <!-- Tail (curled behind) -->
+  <path d="M296 195 Q340 170 348 140 Q352 118 338 108 Q322 100 318 114 Q316 124 326 126" stroke="#F59E0B" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M326 126 Q338 130 336 118" stroke="#F59E0B" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Legs sitting cross-legged -->
+  <ellipse cx="232" cy="212" rx="28" ry="14" fill="#F59E0B" transform="rotate(-15 232 212)"/>
+  <ellipse cx="290" cy="212" rx="28" ry="14" fill="#F59E0B" transform="rotate(15 290 212)"/>
+  <!-- Feet -->
+  <ellipse cx="218" cy="218" rx="14" ry="8" fill="#FBBF24"/>
+  <ellipse cx="302" cy="218" rx="14" ry="8" fill="#FBBF24"/>
+  <!-- Body / torso -->
+  <ellipse cx="260" cy="182" rx="36" ry="42" fill="#F59E0B"/>
+  <!-- Belly -->
+  <ellipse cx="260" cy="192" rx="22" ry="18" fill="#FBBF24" opacity=".6"/>
+  <!-- Sacred thread (janeu) across chest -->
+  <path d="M236 168 Q260 158 284 168 Q278 182 260 186 Q242 182 236 168Z" stroke="#FDE047" stroke-width="1.5" fill="none" opacity=".8"/>
+  <!-- Left arm raised holding mango -->
+  <ellipse cx="216" cy="160" rx="12" ry="28" fill="#F59E0B" transform="rotate(-30 216 160)"/>
+  <ellipse cx="200" cy="140" rx="10" ry="12" fill="#FBBF24"/>
+  <!-- Mango in left hand -->
+  <ellipse cx="192" cy="128" rx="12" ry="15" fill="#22C55E"/>
+  <ellipse cx="192" cy="126" rx="10" ry="12" fill="#84CC16"/>
+  <ellipse cx="196" cy="122" rx="6" ry="8" fill="#FBBF24" opacity=".5"/>
+  <line x1="192" y1="113" x2="188" y2="106" stroke="#15803D" stroke-width="2"/>
+  <!-- Right arm down pointing -->
+  <ellipse cx="304" cy="165" rx="12" ry="26" fill="#F59E0B" transform="rotate(25 304 165)"/>
+  <ellipse cx="316" cy="182" rx="10" ry="11" fill="#FBBF24"/>
+  <!-- HEAD big round cute baby head -->
+  <circle cx="260" cy="128" r="44" fill="#FBBF24"/>
+  <!-- Ears -->
+  <ellipse cx="218" cy="128" rx="10" ry="14" fill="#F59E0B"/>
+  <ellipse cx="218" cy="128" rx="6" ry="9" fill="#FBBF24" opacity=".6"/>
+  <ellipse cx="302" cy="128" rx="10" ry="14" fill="#F59E0B"/>
+  <ellipse cx="302" cy="128" rx="6" ry="9" fill="#FBBF24" opacity=".6"/>
+  <!-- Cute monkey face -->
+  <!-- Eyes big and round -->
+  <circle cx="246" cy="120" r="10" fill="white"/>
+  <circle cx="274" cy="120" r="10" fill="white"/>
+  <circle cx="248" cy="121" r="6" fill="#3B1A08"/>
+  <circle cx="276" cy="121" r="6" fill="#3B1A08"/>
+  <!-- Shiny dots in eyes -->
+  <circle cx="250" cy="118" r="2.5" fill="white"/>
+  <circle cx="278" cy="118" r="2.5" fill="white"/>
+  <!-- Eyebrows raised cute -->
+  <path d="M238 110 Q246 106 254 110" stroke="#5C2E0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M266 110 Q274 106 282 110" stroke="#5C2E0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Cute monkey snout -->
+  <ellipse cx="260" cy="138" rx="16" ry="11" fill="#F9A875"/>
+  <ellipse cx="260" cy="137" rx="13" ry="9" fill="#FBBF24" opacity=".5"/>
+  <!-- Nostrils -->
+  <circle cx="255" cy="137" r="2.5" fill="#C2783C"/>
+  <circle cx="265" cy="137" r="2.5" fill="#C2783C"/>
+  <!-- Big happy smile -->
+  <path d="M246 144 Q260 156 274 144" stroke="#C2783C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Rosy cheeks -->
+  <ellipse cx="232" cy="134" rx="10" ry="7" fill="#FCA5A5" opacity=".5"/>
+  <ellipse cx="288" cy="134" rx="10" ry="7" fill="#FCA5A5" opacity=".5"/>
+  <!-- CROWN / Mukut on head -->
+  <path d="M228 98 Q232 82 240 90 Q244 74 252 85 Q258 70 266 85 Q272 74 280 90 Q288 82 292 98Z" fill="#D97706"/>
+  <path d="M230 98 Q234 84 242 92 Q246 76 254 87 Q260 72 268 87 Q274 76 282 92 Q286 84 290 98Z" fill="#FBBF24"/>
+  <!-- Crown gems -->
+  <circle cx="260" cy="76" r="5" fill="#EF4444"/>
+  <circle cx="244" cy="84" r="4" fill="#22C55E"/>
+  <circle cx="276" cy="84" r="4" fill="#3B82F6"/>
+  <circle cx="234" cy="94" r="3" fill="#A78BFA"/>
+  <circle cx="286" cy="94" r="3" fill="#F97316"/>
+  <!-- Hair peeking out sides -->
+  <ellipse cx="222" cy="104" rx="8" ry="5" fill="#78350F"/>
+  <ellipse cx="298" cy="104" rx="8" ry="5" fill="#78350F"/>
+  <!-- Tilak on forehead -->
+  <ellipse cx="260" cy="103" rx="4" ry="7" fill="#DC2626" opacity=".8"/>
+  <ellipse cx="260" cy="102" rx="2" ry="4" fill="#FDE047" opacity=".9"/>
+
+  <!-- Sparkle stars around baby -->
+  <path d="M158 90 L161 84 L164 90 L170 93 L164 96 L161 102 L158 96 L152 93Z" fill="#FDE047"/>
+  <path d="M352 78 L354 73 L356 78 L361 80 L356 82 L354 87 L352 82 L347 80Z" fill="#FDE047"/>
+  <path d="M140 150 L142 145 L144 150 L149 152 L144 154 L142 159 L140 154 L135 152Z" fill="#F472B6"/>
+  <path d="M370 155 L372 150 L374 155 L379 157 L374 159 L372 164 L370 159 L365 157Z" fill="#A78BFA"/>
+  <!-- Small birds flying -->
+  <path d="M100 62 Q106 57 112 62" stroke="#6B7280" stroke-width="1.5" fill="none"/>
+  <path d="M115 55 Q121 50 127 55" stroke="#6B7280" stroke-width="1.5" fill="none"/>
+  <path d="M340 48 Q346 43 352 48" stroke="#6B7280" stroke-width="1.5" fill="none"/>
+</svg>`;
+
+const SCENES={
+guru:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="170" cy="205" rx="110" ry="14" fill="#E8D48B" opacity=".35"/>
+  <circle cx="170" cy="72" r="30" fill="#D4845A"/><ellipse cx="170" cy="120" rx="34" ry="38" fill="#E07830"/>
+  <circle cx="161" cy="66" r="4" fill="#5C2E0A"/><circle cx="179" cy="66" r="4" fill="#5C2E0A"/>
+  <path d="M161 83 Q170 90 179 83" stroke="#5C2E0A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M140 58 Q170 32 200 58 Q185 40 170 38 Q155 40 140 58Z" fill="#B5451B"/>
+  <circle cx="170" cy="36" r="6" fill="#FFD700"/>
+  <ellipse cx="170" cy="178" rx="32" ry="13" fill="#F9A0A0"/>
+  <ellipse cx="157" cy="180" rx="13" ry="8" fill="#F06060"/>
+  <ellipse cx="183" cy="180" rx="13" ry="8" fill="#F06060"/>
+  <ellipse cx="130" cy="178" rx="9" ry="6" fill="#FDA4AF" transform="rotate(-20 130 178)"/>
+  <ellipse cx="210" cy="178" rx="9" ry="6" fill="#FDA4AF" transform="rotate(20 210 178)"/>
+  <circle cx="80" cy="95" r="26" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2.5"/>
+  <rect x="72" y="86" width="16" height="18" rx="2" fill="#93C5FD" opacity=".7"/>
+  <line x1="72" y1="91" x2="88" y2="91" stroke="#60A5FA" stroke-width="1.5"/>
+  <line x1="72" y1="97" x2="88" y2="97" stroke="#60A5FA" stroke-width="1.5"/>
+  <line x1="72" y1="103" x2="88" y2="103" stroke="#60A5FA" stroke-width="1.5"/>
+  <line x1="80" y1="121" x2="80" y2="138" stroke="#7c3d12" stroke-width="2.5"/>
+  <rect x="73" y="138" width="14" height="8" rx="2" fill="#7c3d12"/>
+  <circle cx="262" cy="84" r="20" fill="#FEF9C3" stroke="#FDE047" stroke-width="2"/>
+  <circle cx="58" cy="48" r="12" fill="#FEF9C3" stroke="#FDE047" stroke-width="1.5"/>
+</svg>`,
+prayer:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="172" width="260" height="32" rx="16" fill="#86EFAC" opacity=".4"/>
+  <circle cx="170" cy="78" r="30" fill="#FBBF24"/><ellipse cx="170" cy="126" rx="32" ry="36" fill="#F59E0B"/>
+  <circle cx="161" cy="72" r="4" fill="#5C2E0A"/><circle cx="179" cy="72" r="4" fill="#5C2E0A"/>
+  <circle cx="161" cy="71" r="1.6" fill="white"/><circle cx="179" cy="71" r="1.6" fill="white"/>
+  <path d="M161 88 Q170 95 179 88" stroke="#5C2E0A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="150" cy="110" rx="10" ry="22" fill="#F59E0B" transform="rotate(-25 150 110)"/>
+  <ellipse cx="190" cy="110" rx="10" ry="22" fill="#F59E0B" transform="rotate(25 190 110)"/>
+  <ellipse cx="142" cy="122" rx="9" ry="9" fill="#FBBF24"/>
+  <ellipse cx="198" cy="122" rx="9" ry="9" fill="#FBBF24"/>
+  <line x1="142" y1="118" x2="198" y2="118" stroke="#D97706" stroke-width="2.5"/>
+  <path d="M162 160 Q148 172 155 178 Q167 182 163 166" stroke="#F59E0B" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <polygon points="160,62 164,44 170,58 176,44 180,62" fill="#F97316"/>
+  <circle cx="170" cy="47" r="4" fill="#FBBF24"/>
+  <circle cx="72" cy="58" r="15" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+  <circle cx="268" cy="52" r="11" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+</svg>`,
+ocean:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 150 Q42 132 84 150 Q126 168 170 150 Q212 132 256 150 Q298 168 340 150 L340 220 L0 220Z" fill="#0284C7" opacity=".3"/>
+  <path d="M0 168 Q55 152 110 168 Q165 184 220 168 Q275 152 340 168 L340 220 L0 220Z" fill="#0369A1" opacity=".35"/>
+  <circle cx="170" cy="78" r="34" fill="#FBBF24"/><ellipse cx="170" cy="130" rx="34" ry="40" fill="#F59E0B"/>
+  <circle cx="160" cy="73" r="4.5" fill="#5C2E0A"/><circle cx="180" cy="73" r="4.5" fill="#5C2E0A"/>
+  <circle cx="160" cy="72" r="2" fill="white"/><circle cx="180" cy="72" r="2" fill="white"/>
+  <path d="M160 90 Q170 98 180 90" stroke="#5C2E0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <polygon points="158,62 162,44 170,57 178,44 182,62" fill="#F97316"/><circle cx="170" cy="47" r="4" fill="#FBBF24"/>
+  <ellipse cx="90" cy="104" rx="16" ry="32" fill="#F59E0B" transform="rotate(-30 90 104)"/>
+  <ellipse cx="250" cy="104" rx="16" ry="32" fill="#F59E0B" transform="rotate(30 250 104)"/>
+  <ellipse cx="44" cy="154" rx="15" ry="10" fill="#7DD3FC" opacity=".7"/>
+  <ellipse cx="296" cy="148" rx="13" ry="9" fill="#7DD3FC" opacity=".7"/>
+  <path d="M162 172 Q148 183 155 188 Q168 192 165 178" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>`,
+anjani:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 172 Q85 155 170 172 Q255 189 340 172 L340 220 L0 220Z" fill="#BBF7D0" opacity=".4"/>
+  <circle cx="118" cy="65" r="24" fill="#FCA5A5"/>
+  <ellipse cx="118" cy="105" rx="26" ry="32" fill="#F472B6"/>
+  <circle cx="111" cy="61" r="3" fill="#5C2E0A"/><circle cx="125" cy="61" r="3" fill="#5C2E0A"/>
+  <path d="M111 74 Q118 80 125 74" stroke="#5C2E0A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <circle cx="109" cy="47" r="5" fill="#FDE047"/><circle cx="127" cy="47" r="5" fill="#FDE047"/>
+  <ellipse cx="102" cy="110" rx="10" ry="18" fill="#F472B6" transform="rotate(-15 102 110)"/>
+  <circle cx="156" cy="96" r="17" fill="#FBBF24"/>
+  <circle cx="151" cy="92" r="3" fill="#5C2E0A"/><circle cx="161" cy="92" r="3" fill="#5C2E0A"/>
+  <path d="M151 101 Q156 106 161 101" stroke="#5C2E0A" stroke-width="1.3" fill="none"/>
+  <path d="M173 93 Q185 82 180 92" stroke="#FBBF24" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <circle cx="248" cy="68" r="28" fill="#BFDBFE" stroke="#7DD3FC" stroke-width="2"/>
+  <text x="248" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#0284C7" font-family="Baloo 2,sans-serif">Vayu Dev</text>
+  <text x="248" y="74" text-anchor="middle" font-size="11" fill="#0369A1" font-family="Baloo 2,sans-serif">Wind God</text>
+  <text x="248" y="88" text-anchor="middle" font-size="20" fill="#0284C7">~</text>
+  <path d="M194 80 Q218 74 222 70" stroke="#93C5FD" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+  <text x="118" y="152" text-anchor="middle" font-size="11" font-weight="700" fill="#9D174D" font-family="Baloo 2,sans-serif">Mother Anjani</text>
+  <text x="155" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309" font-family="Baloo 2,sans-serif">Baby Hanuman</text>
+</svg>`,
+thoughts:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="64" cy="72" rx="46" ry="32" fill="#FECACA" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="64" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#B91C1C" font-family="Baloo 2,sans-serif">Bad thoughts</text>
+  <line x1="46" y1="60" x2="82" y2="82" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <line x1="82" y1="60" x2="46" y2="82" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="276" cy="72" rx="46" ry="32" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="276" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D" font-family="Baloo 2,sans-serif">Good thoughts</text>
+  <text x="276" y="84" text-anchor="middle" font-size="20" fill="#22C55E">✓</text>
+  <circle cx="170" cy="112" r="34" fill="#FBBF24"/><ellipse cx="170" cy="160" rx="32" ry="36" fill="#F59E0B"/>
+  <circle cx="161" cy="107" r="4" fill="#5C2E0A"/><circle cx="179" cy="107" r="4" fill="#5C2E0A"/>
+  <circle cx="161" cy="106" r="1.7" fill="white"/><circle cx="179" cy="106" r="1.7" fill="white"/>
+  <path d="M161 122 Q170 129 179 122" stroke="#5C2E0A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <polygon points="160,94 164,78 170,89 176,78 180,94" fill="#F97316"/>
+  <path d="M110 84 Q130 100 136 108" stroke="#EF4444" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <path d="M204 108 Q225 95 230 82" stroke="#22C55E" stroke-width="2" fill="none"/>
+  <path d="M162 194 Q148 204 156 209 Q168 213 164 198" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>`,
+hero:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="170" cy="70" r="38" fill="#FBBF24"/><ellipse cx="170" cy="132" rx="42" ry="48" fill="#F59E0B"/>
+  <ellipse cx="118" cy="116" rx="18" ry="34" fill="#F59E0B" transform="rotate(-25 118 116)"/>
+  <ellipse cx="222" cy="116" rx="18" ry="34" fill="#F59E0B" transform="rotate(25 222 116)"/>
+  <circle cx="95" cy="99" r="18" fill="#D97706"/><circle cx="245" cy="99" r="18" fill="#D97706"/>
+  <circle cx="160" cy="64" r="5.5" fill="#5C2E0A"/><circle cx="180" cy="64" r="5.5" fill="#5C2E0A"/>
+  <circle cx="160" cy="62" r="2.2" fill="white"/><circle cx="180" cy="62" r="2.2" fill="white"/>
+  <path d="M158 82 L170 91 L182 82" stroke="#5C2E0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M142 46 Q148 26 159 42 Q164 22 170 37 Q176 22 181 42 Q192 26 198 46Z" fill="#F97316"/>
+  <polygon points="165,34 170,22 175,34" fill="#FDE047"/>
+  <circle cx="56" cy="60" r="20" fill="#E0F2FE" stroke="#7DD3FC" stroke-width="2"/>
+  <text x="56" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="#0369A1" font-family="Baloo 2,sans-serif">Vajra</text>
+  <text x="56" y="68" text-anchor="middle" font-size="10" fill="#0284C7" font-family="Baloo 2,sans-serif">Diamond</text>
+  <line x1="258" y1="106" x2="272" y2="162" stroke="#B45309" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="272" cy="165" r="12" fill="#D97706"/>
+  <path d="M162 178 Q148 190 156 195 Q168 199 165 184" stroke="#F59E0B" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>`,
+threeworlds:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="340" height="68" fill="#E0E7FF" opacity=".4"/>
+  <rect x="0" y="68" width="340" height="86" fill="#DCFCE7" opacity=".3"/>
+  <rect x="0" y="154" width="340" height="66" fill="#FEF9C3" opacity=".45"/>
+  <text x="30" y="34" font-size="11" font-weight="700" fill="#6366F1" font-family="Baloo 2,sans-serif">Sky World</text>
+  <text x="30" y="110" font-size="11" font-weight="700" fill="#16A34A" font-family="Baloo 2,sans-serif">Earth</text>
+  <text x="30" y="182" font-size="11" font-weight="700" fill="#B45309" font-family="Baloo 2,sans-serif">Underworld</text>
+  <circle cx="215" cy="100" r="34" fill="#FBBF24"/><ellipse cx="215" cy="150" rx="32" ry="38" fill="#F59E0B"/>
+  <circle cx="206" cy="95" r="4" fill="#5C2E0A"/><circle cx="224" cy="95" r="4" fill="#5C2E0A"/>
+  <circle cx="206" cy="94" r="1.7" fill="white"/><circle cx="224" cy="94" r="1.7" fill="white"/>
+  <path d="M206 110 Q215 117 224 110" stroke="#5C2E0A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <polygon points="205,82 209,64 215,77 221,64 225,82" fill="#F97316"/>
+  <line x1="215" y1="30" x2="215" y2="64" stroke="#FDE047" stroke-width="3" stroke-dasharray="5,3" opacity=".8"/>
+  <line x1="215" y1="186" x2="215" y2="210" stroke="#F59E0B" stroke-width="3" stroke-dasharray="5,3" opacity=".8"/>
+  <circle cx="215" cy="24" r="10" fill="#FDE047" stroke="#F97316" stroke-width="2"/>
+  <circle cx="96" cy="30" r="5" fill="#A5B4FC"/><circle cx="122" cy="18" r="7" fill="#818CF8"/><circle cx="76" cy="46" r="4" fill="#C7D2FE"/>
+  <circle cx="82" cy="172" r="7" fill="#FDE047" opacity=".7"/><circle cx="112" cy="185" r="5" fill="#FCD34D" opacity=".7"/>
+</svg>`,
+messenger:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 178 Q85 160 170 178 Q255 196 340 178 L340 220 L0 220Z" fill="#86EFAC" opacity=".3"/>
+  <circle cx="80" cy="90" r="24" fill="#FCA5A5"/><ellipse cx="80" cy="128" rx="20" ry="24" fill="#EF4444"/>
+  <circle cx="74" cy="86" r="3" fill="#5C2E0A"/><circle cx="86" cy="86" r="3" fill="#5C2E0A"/>
+  <path d="M74 97 Q80 102 86 97" stroke="#5C2E0A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <circle cx="74" cy="76" r="4.5" fill="#FEF3C7" stroke="#FDE047" stroke-width="1"/>
+  <circle cx="86" cy="76" r="4.5" fill="#FEF3C7" stroke="#FDE047" stroke-width="1"/>
+  <rect x="68" y="64" width="26" height="9" rx="4" fill="#DC2626"/>
+  <circle cx="248" cy="88" r="32" fill="#FBBF24"/><ellipse cx="248" cy="137" rx="30" ry="34" fill="#F59E0B"/>
+  <circle cx="239" cy="83" r="4" fill="#5C2E0A"/><circle cx="257" cy="83" r="4" fill="#5C2E0A"/>
+  <circle cx="239" cy="82" r="1.6" fill="white"/><circle cx="257" cy="82" r="1.6" fill="white"/>
+  <path d="M239 98 Q248 105 257 98" stroke="#5C2E0A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <polygon points="238,72 242,55 248,67 254,55 258,72" fill="#F97316"/>
+  <ellipse cx="270" cy="110" rx="13" ry="24" fill="#F59E0B" transform="rotate(20 270 110)"/>
+  <rect x="277" y="74" width="34" height="24" rx="5" fill="#FEF9C3" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="281" y1="82" x2="307" y2="82" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="281" y1="88" x2="307" y2="88" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="281" y1="94" x2="307" y2="94" stroke="#D97706" stroke-width="1.5"/>
+  <path d="M104 97 Q160 82 218 93" stroke="#B45309" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+  <text x="162" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309" font-family="Baloo 2,sans-serif">Ram's message</text>
+  <path d="M238 172 Q224 184 231 189 Q244 193 240 178" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>`,
+golden:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="170" cy="76" r="34" fill="#FBBF24"/><ellipse cx="170" cy="128" rx="34" ry="40" fill="#F59E0B"/>
+  <ellipse cx="128" cy="114" rx="16" ry="30" fill="#F59E0B" transform="rotate(-22 128 114)"/>
+  <ellipse cx="212" cy="114" rx="16" ry="30" fill="#F59E0B" transform="rotate(22 212 114)"/>
+  <circle cx="161" cy="70" r="4.5" fill="#5C2E0A"/><circle cx="179" cy="70" r="4.5" fill="#5C2E0A"/>
+  <circle cx="161" cy="69" r="1.8" fill="white"/><circle cx="179" cy="69" r="1.8" fill="white"/>
+  <path d="M161 86 Q170 93 179 86" stroke="#5C2E0A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="68" cy="70" rx="14" ry="10" fill="#FDE047" stroke="#F59E0B" stroke-width="1.5"/>
+  <ellipse cx="272" cy="70" rx="14" ry="10" fill="#FDE047" stroke="#F59E0B" stroke-width="1.5"/>
+  <polygon points="158,60 163,42 170,56 177,42 182,60" fill="#D97706"/>
+  <circle cx="170" cy="44" r="4.5" fill="#FFD700"/>
+  <circle cx="54" cy="48" r="18" fill="#FEF9C3" stroke="#FDE047" stroke-width="2"/>
+  <text x="54" y="44" text-anchor="middle" font-size="9" fill="#B45309" font-family="Baloo 2,sans-serif">Golden</text>
+  <text x="54" y="56" text-anchor="middle" font-size="9" fill="#B45309" font-family="Baloo 2,sans-serif">glow</text>
+  <path d="M162 170 Q148 182 156 187 Q168 191 165 176" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <circle cx="287" cy="44" r="14" fill="#FEF9C3" stroke="#FDE047" stroke-width="1.5"/>
+  <text x="287" y="50" text-anchor="middle" font-size="16" fill="#D97706">✦</text>
+</svg>`,
+lanka:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="130" width="340" height="90" fill="#FCA5A5" opacity=".25"/>
+  <rect x="60" y="100" width="80" height="100" rx="6" fill="#9CA3AF"/>
+  <rect x="80" y="110" width="16" height="20" rx="3" fill="#6B7280"/>
+  <rect x="104" y="110" width="16" height="20" rx="3" fill="#6B7280"/>
+  <rect x="80" y="140" width="16" height="20" rx="3" fill="#6B7280"/>
+  <rect x="104" y="140" width="16" height="20" rx="3" fill="#6B7280"/>
+  <rect x="84" y="168" width="32" height="32" rx="3" fill="#6B7280"/>
+  <polygon points="60,100 100,70 140,100" fill="#78716C"/>
+  <ellipse cx="100" cy="118" rx="50" ry="20" fill="#FCA5A5" opacity=".5"/>
+  <path d="M70 108 Q80 90 90 110 Q100 88 110 110 Q120 90 130 108" stroke="#F97316" stroke-width="3" fill="none"/>
+  <circle cx="240" cy="78" r="32" fill="#FBBF24"/><ellipse cx="240" cy="126" rx="30" ry="36" fill="#F59E0B"/>
+  <circle cx="232" cy="73" r="4" fill="#5C2E0A"/><circle cx="248" cy="73" r="4" fill="#5C2E0A"/>
+  <path d="M232 90 Q240 97 248 90" stroke="#5C2E0A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <polygon points="230,63 234,46 240,59 246,46 250,63" fill="#F97316"/>
+  <path d="M240 164 Q228 176 235 181 Q246 185 243 170" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <circle cx="282" cy="48" r="14" fill="#FEF9C3" stroke="#FDE047" stroke-width="1.5"/>
+  <text x="282" y="54" text-anchor="middle" font-size="16" fill="#F97316">🔥</text>
+</svg>`,
+sanjivani:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="155" width="260" height="55" rx="16" fill="#86EFAC" opacity=".3"/>
+  <rect x="70" y="118" width="200" height="80" rx="8" fill="#BBF7D0" opacity=".35"/>
+  <circle cx="170" cy="74" r="32" fill="#FBBF24"/><ellipse cx="170" cy="124" rx="32" ry="38" fill="#F59E0B"/>
+  <circle cx="162" cy="69" r="4" fill="#5C2E0A"/><circle cx="178" cy="69" r="4" fill="#5C2E0A"/>
+  <circle cx="162" cy="68" r="1.7" fill="white"/><circle cx="178" cy="68" r="1.7" fill="white"/>
+  <path d="M162 84 Q170 91 178 84" stroke="#5C2E0A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <polygon points="160,58 164,42 170,55 176,42 180,58" fill="#F97316"/>
+  <ellipse cx="210" cy="104" rx="16" ry="28" fill="#F59E0B" transform="rotate(22 210 104)"/>
+  <ellipse cx="128" cy="108" rx="16" ry="24" fill="#F59E0B" transform="rotate(-22 128 108)"/>
+  <ellipse cx="90" cy="130" rx="20" ry="12" fill="#4ADE80"/>
+  <ellipse cx="250" cy="125" rx="18" ry="10" fill="#4ADE80"/>
+  <circle cx="90" cy="120" r="8" fill="#16A34A"/><circle cx="78" cy="126" r="6" fill="#22C55E"/><circle cx="102" cy="126" r="6" fill="#22C55E"/>
+  <text x="90" y="118" text-anchor="middle" font-size="8" font-weight="700" fill="#fff" font-family="Baloo 2,sans-serif">herb</text>
+  <path d="M162 164 Q148 176 155 181 Q168 185 165 170" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <circle cx="268" cy="52" r="18" fill="#BFDBFE" stroke="#93C5FD" stroke-width="2"/>
+  <text x="268" y="46" text-anchor="middle" font-size="9" fill="#1D4ED8" font-family="Baloo 2,sans-serif">Lakshman</text>
+  <text x="268" y="58" text-anchor="middle" font-size="9" fill="#1D4ED8" font-family="Baloo 2,sans-serif">revived</text>
+  <text x="268" y="70" text-anchor="middle" font-size="14" fill="#22C55E">✓</text>
+</svg>`,
+sun:`<svg width="340" height="220" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="270" cy="55" r="40" fill="#FDE047" stroke="#FBBF24" stroke-width="3"/>
+  <circle cx="270" cy="55" r="28" fill="#FEF08A"/>
+  <text x="270" y="62" text-anchor="middle" font-size="22" fill="#D97706" font-family="serif">☀</text>
+  <line x1="270" y1="8" x2="270" y2="20" stroke="#FDE047" stroke-width="3" stroke-linecap="round"/>
+  <line x1="310" y1="20" x2="302" y2="28" stroke="#FDE047" stroke-width="3" stroke-linecap="round"/>
+  <line x1="318" y1="55" x2="306" y2="55" stroke="#FDE047" stroke-width="3" stroke-linecap="round"/>
+  <line x1="310" y1="90" x2="302" y2="82" stroke="#FDE047" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="118" cy="118" r="38" fill="#FBBF24"/><ellipse cx="118" cy="166" rx="36" ry="42" fill="#F59E0B"/>
+  <circle cx="108" cy="112" r="5" fill="#5C2E0A"/><circle cx="128" cy="112" r="5" fill="#5C2E0A"/>
+  <circle cx="108" cy="110" r="2" fill="white"/><circle cx="128" cy="110" r="2" fill="white"/>
+  <path d="M108 128 Q118 136 128 128" stroke="#5C2E0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <polygon points="106,98 111,78 118,92 125,78 130,98" fill="#F97316"/>
+  <path d="M148 118 Q188 88 234 66" stroke="#FBBF24" stroke-width="3" fill="none" stroke-dasharray="6,4"/>
+  <text x="196" y="95" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309" font-family="Baloo 2,sans-serif">reaching for sun!</text>
+  <path d="M108 206 Q94 218 102 213 Q114 217 110 202" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>`,
+};
+
+// ═══════════════════════════════════════════════════════════
+// STATE & AUDIO
+// ═══════════════════════════════════════════════════════════
+let lang='en', cur=0, audioLang='en';
+let synth=window.speechSynthesis, utt=null, playing=false, progressInterval=null;
+
+const UI={
+  hi:{heroTitle:"हनुमान चालीसा",heroSub:"सुंदर चित्रों, शब्द-दर-शब्द अर्थ और ऑडियो के साथ — हिंदी, तेलुगु और अंग्रेज़ी में",wordLbl:"शब्द-दर-शब्द",meanLbl:"पूरा अर्थ",moralLbl:"जीवन-सीख",verse:"पद",of:"का",audioLbl:"सुनें:"},
+  te:{heroTitle:"హనుమాన్ చాలీసా",heroSub:"అందమైన బొమ్మలతో, పదం-పదం అర్థంతో మరియు ఆడియోతో — తెలుగు, హిందీ మరియు ఆంగ్లంలో",wordLbl:"పదం-పదం అర్థం",meanLbl:"పూర్తి అర్థం",moralLbl:"జీవిత పాఠం",verse:"పద్యం",of:"యొక్క",audioLbl:"వినండి:"},
+  en:{heroTitle:"Hanuman Chalisa",heroSub:"Beautiful illustrations, word-by-word meanings and audio — in Hindi, Telugu and English",wordLbl:"Word by Word",meanLbl:"Full Meaning",moralLbl:"Life Lesson",verse:"Verse",of:"of",audioLbl:"Listen in:"}
+};
+
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  const u=UI[l];
+  document.getElementById('heroTitle').textContent=u.heroTitle;
+  document.getElementById('heroSub').textContent=u.heroSub;
+  render();
+}
+
+function setAudioLang(al){
+  audioLang=al;
+  document.querySelectorAll('.alang-btn').forEach(b=>b.classList.toggle('active',b.dataset.al===al));
+  stopAudio();
+}
+
+function getAudioText(){
+  const v=V[cur];
+  if(audioLang==='hi') return v.san + ' ... ' + (v.meaning.hi||v.meaning.en);
+  if(audioLang==='te') return v.tel + ' ... ' + (v.meaning.te||v.meaning.en);
+  return v.rom + ' ... ' + v.meaning.en;
+}
+
+function getLangCode(){
+  if(audioLang==='hi') return 'hi-IN';
+  if(audioLang==='te') return 'te-IN';
+  return 'en-IN';
+}
+
+function togglePlay(){
+  if(playing){stopAudio();}
+  else{startAudio();}
+}
+
+function startAudio(){
+  stopAudio();
+  utt=new SpeechSynthesisUtterance(getAudioText());
+  utt.lang=getLangCode();
+  utt.rate=parseFloat(document.getElementById('speedSel').value);
+  const vs=synth.getVoices();
+  const match=vs.find(v=>v.lang===utt.lang)||vs.find(v=>v.lang.startsWith(audioLang))||null;
+  if(match) utt.voice=match;
+  utt.onstart=()=>{playing=true;document.getElementById('playBtn').textContent='⏸';startProgress();};
+  utt.onend=utt.onerror=()=>{playing=false;document.getElementById('playBtn').textContent='▶';stopProgress();};
+  synth.speak(utt);
+}
+
+function stopAudio(){
+  synth.cancel();
+  playing=false;
+  document.getElementById('playBtn').textContent='▶';
+  stopProgress();
+  document.getElementById('audioProgress').style.width='0%';
+  document.getElementById('audioTime').textContent='0:00';
+}
+
+let progStart=null,progDur=0;
+function startProgress(){
+  progStart=Date.now();
+  progDur=(getAudioText().length/15)*1000/parseFloat(document.getElementById('speedSel').value);
+  progressInterval=setInterval(()=>{
+    const elapsed=(Date.now()-progStart)/1000;
+    const pct=Math.min(100,(elapsed/(progDur/1000))*100);
+    document.getElementById('audioProgress').style.width=pct+'%';
+    const s=Math.floor(elapsed), m=Math.floor(s/60), sec=s%60;
+    document.getElementById('audioTime').textContent=m+':'+(sec<10?'0':'')+sec;
+    if(pct>=100) stopProgress();
+  },200);
+}
+function stopProgress(){clearInterval(progressInterval);}
+
+function seekAudio(e){
+  const rect=document.getElementById('progressWrap').getBoundingClientRect();
+  const pct=(e.clientX-rect.left)/rect.width;
+  stopAudio();
+  document.getElementById('audioProgress').style.width=(pct*100)+'%';
+}
+
+function changeSpeed(){
+  if(playing){stopAudio();startAudio();}
+}
+
+function go(d){const n=cur+d;if(n>=0&&n<V.length){cur=n;stopAudio();render();}}
+
+function render(){
+  const v=V[cur], u=UI[lang];
+  document.getElementById('prevBtn').disabled=cur===0;
+  document.getElementById('nextBtn').disabled=cur===V.length-1;
+  document.getElementById('verseCounter').textContent=`${u.verse} ${cur+1} ${u.of} ${V.length}`;
+  document.getElementById('audioTitle').textContent=`${v.label[lang]||v.label.en} — ${v.rom.substring(0,45)}...`;
+  document.getElementById('audioLangLbl').textContent=u.audioLbl;
+
+  let pips='';
+  for(let i=0;i<V.length;i++)
+    pips+=`<button class="pip${i===cur?' active':''}" onclick="cur=${i};stopAudio();render()" title="${V[i].label.en}">${i+1}</button>`;
+  document.getElementById('pipRow').innerHTML=pips;
+
+  document.getElementById('illusZone').innerHTML=
+    `<div class="verse-label-pill">${v.label[lang]||v.label.en}</div>${SCENES[v.scene]||BABY_HANUMAN}`;
+
+  const srcClass=lang==='te'?'tel':lang==='hi'?'deva':'';
+  let c='';
+  if(lang==='hi') c+=`<div class="script-hindi">${v.san}</div>`;
+  else if(lang==='te') c+=`<div class="script-telugu">${v.tel}</div>`;
+  else c+=`<div class="script-hindi" style="font-family:var(--font-body);font-size:18px">${v.san}</div>`;
+  c+=`<div class="script-roman">${v.rom}</div>`;
+
+  c+=`<span class="section-lbl">${u.wordLbl}</span><div class="word-grid">`;
+  v.words.forEach(w=>{
+    const wm=lang==='hi'?w.hi:(lang==='te'?w.te:w.en);
+    const ws=lang==='hi'?w.s:(lang==='te'?w.s:w.s);
+    c+=`<div class="wcard"><span class="wcard-src ${srcClass}">${ws}</span><span class="wcard-rom">${w.r}</span><span class="wcard-eng">${wm}</span></div>`;
+  });
+  c+=`</div>`;
+  c+=`<span class="section-lbl">${u.meanLbl}</span>`;
+  c+=`<div class="meaning-box">${v.meaning[lang]||v.meaning.en}</div>`;
+  c+=`<div class="moral-row"><div class="moral-star">★</div><div class="moral-text">${v.moral[lang]||v.moral.en}</div></div>`;
+
+  document.getElementById('contentZone').innerHTML=c;
+  document.getElementById('footerBar').innerHTML=
+    `<span>${v.label[lang]||v.label.en} · ${v.type}</span><span>जय हनुमान · జయ హనుమాన్ · Jai Hanuman</span>`;
+
+  document.getElementById('pageCard').style.animation='none';
+  void document.getElementById('pageCard').offsetWidth;
+  document.getElementById('pageCard').style.animation='fadeSlide .35s ease';
+}
+
+if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=()=>{};
+render();
+</script>
+</body>
+</html>
